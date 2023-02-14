@@ -13,11 +13,13 @@ function SignIn() {
           <div className="max-w-sm mx-auto">
             <div className="mb-6 text-center">
               <a className="inline-block mb-6" href="#">
+              <Link to="/home">
                 <img
                   className="h-16"
-                  src="flex-ui-assets/logos/flex-circle-green.svg"
+                  src="./booklogo.png"
                   alt=""
                 />
+                 </Link>
               </a>
               <h3 className="mb-4 text-2xl md:text-3xl font-bold">
                 Sign in to your account
@@ -93,7 +95,7 @@ function SignIn() {
                   className="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline"
                   href="#"
                 >
-                  Sign up
+                 <Link to="/SignUp"> Sign Up</Link>
                 </a>
               </p>
             </form>

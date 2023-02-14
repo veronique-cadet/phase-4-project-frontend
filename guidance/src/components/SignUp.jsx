@@ -1,6 +1,8 @@
 import React from "react";
+
 import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
+
 
 
 function SignUp() {
@@ -15,11 +17,13 @@ function SignUp() {
             <div className="max-w-sm mx-auto">
               <div className="mb-6 text-center">
                 <a className="inline-block mb-6" href="#">
-                  <img
-                    className="h-16"
-                    src="flex-ui-assets/logos/flex-circle-green.svg"
-                    alt=""
-                  />
+                <Link to="/home">
+                <img
+                  className="h-16"
+                  src="./booklogo.png"
+                  alt=""
+                />
+                 </Link>
                 </a>
                 <h3 className="mb-4 text-2xl md:text-3xl font-bold">
                   Create an Account
@@ -119,7 +123,7 @@ function SignUp() {
                     className="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline"
                     href="#"
                   > 
-                    <Link to="/SignIn"> Sign In</Link>
+                    <Link to="/SignIn"> Log In</Link>
                   </a>
                 </p>
               </form>
