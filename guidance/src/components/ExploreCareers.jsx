@@ -6,11 +6,11 @@ function ExploreCareers() {
   return (
     <div>
       <NavBar />
-      <h1 className="mb- text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
-        Hi, Future Student!{" "}
-      </h1>
       <section className="bg-gray-50 py-4">
         <div className="container px-4 mx-auto">
+      <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
+        Hi, Future Student!{" "}
+      </h1>
           <div className="p-6 h-full border border-gray-100 overflow-hidden bg-white rounded-md shadow-dashboard">
             <div className="pb-6 border-b border-gray-100">
               <div className="flex flex-wrap items-center justify-between -m-2">
