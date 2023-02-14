@@ -3,7 +3,7 @@ import React from 'react'
 function Features() {
   return (
     <div>
-  <section className="py-24 md:py-28 bg-white" style="background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
+  <section className="py-24 md:py-28 bg-white" style={{backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: 'center'}}>
   <div className="container px-4 mx-auto">
     <div className="flex flex-wrap -mx-4">
       <div className="w-full md:w-1/3 px-4">

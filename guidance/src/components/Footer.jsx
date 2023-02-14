@@ -2,12 +2,12 @@ import React from 'react'
 
 function Footer() {
   return (
-    <section className="bg-coolGray-900 overflow-hidden" style="background-image: url('flex-ui-assets/elements/pattern-dark.svg'); background-position: center;">
+    <section className="bg-coolGray-900 overflow-hidden" style={{backgroundImage: "url('./pattern-dark.svg')", backgroundPosition: "center"}}>
     <div className="container px-4 mx-auto">
       <div className="flex flex-wrap lg:items-center pt-24 pb-12 -mx-4">
         <div className="w-full md:w-1/4 lg:w-auto px-4">
           <a className="block mb-5 md:mb-0 max-w-max" href="#">
-            <img className="h-8" src="flex-ui-assets/logos/flex-ui-green.svg" alt=""/>
+            <img className="h-8" src="" alt=""/>
           </a>
         </div>
         <div className="w-full md:w-3/4 lg:flex-1 px-4">
