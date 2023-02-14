@@ -1,13 +1,17 @@
-import logo from './logo.svg';
+import { Route, Routes } from "react-router-dom";
+
 import './App.css';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
+import SignIn from "./components/SignIn";
+import Home from "./components/Home"
 
 function App() {
   return (
     <div className="bg-tarnsparent">
-    <NavBar/>
-    <Home/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/signin" element={<SignIn />}></Route>
+      </Routes>
     </div>
   );
 }
