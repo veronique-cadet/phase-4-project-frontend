@@ -24,9 +24,13 @@ function Home() {
         </div>
         <div className="w-full md:w-1/2 px-4">
           <div className="relative mx-auto md:mr-0 max-w-max">
+                          <Link to="/explore">
+
             <img className="absolute z-10 -left-14 -top-12 w-18" src="./circle1-yellow.svg" alt=""/>
             <img className= "absolute z-10 -right-7 -bottom-8 w-28 md:w-auto" src="./dots3-blue.svg" alt=""/>
             <img className="relative rounded-7xl" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?crop=entropy&amp;cs=tinysrgb&amp;fm=jpg&amp;ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHwxMjV8fHNjaG9vbCUyMG1vbmV5fGVufDB8fHx8MTY3NjMzMDY1Mg&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920" alt=""/>
+                            </Link>
+
           </div>
         </div>
       </div>

@@ -5,6 +5,8 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home"
 import Footer from "./components/Footer"
+import CareerCaraousel from "./components/CareerCaraousel";
+import ExploreCareers from "./components/ExploreCareers";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/carousel" element={<CareerCaraousel />}></Route>
+        <Route path="/explore" element={<ExploreCareers />}></Route>
       </Routes>
     </div>
   );
