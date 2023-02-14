@@ -36,7 +36,7 @@ function SignUp() {
                   <input
                     className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
-                    placeholder="Patryk"
+                    placeholder="Hassan"
                   />
                 </div>
                 <div className="mb-6">
@@ -49,7 +49,7 @@ function SignUp() {
                   <input
                     className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
-                    placeholder="dev@shuffle.dev"
+                    placeholder="student@guidance.edu"
                   />
                 </div>
                 <div className="mb-4">
@@ -125,7 +125,7 @@ function SignUp() {
         </div>
         <img
           className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover"
-          src="flex-ui-assets/images/sign-up/photo-sign-up-side.png"
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw0NHx8c3R1ZGVudHxlbnwwfHx8fDE2NzYzODk1NTI&ixlib=rb-4.0.3&q=80&w=1920"
           alt=""
         />
       </section>
