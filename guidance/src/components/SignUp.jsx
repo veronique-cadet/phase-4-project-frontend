@@ -1,4 +1,5 @@
 import React from "react";
+import NavBarTwo from "./NavBarTwo";
 
 function SignUp() {
   return (
