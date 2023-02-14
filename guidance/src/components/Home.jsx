@@ -7,7 +7,7 @@ import Footer from "./Footer.jsx"
 
 function Home() {
   return (
-
+<div>
  <div className="bg-tarnsparent">
   <NavBar/>
   <div className="py-20 md:py-28">
@@ -32,7 +32,7 @@ function Home() {
     </div>
   </div>
   </div>
-
+  </div>
  
   
   ) 
