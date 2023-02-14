@@ -3,7 +3,6 @@ import React from 'react'
 function CareerCaraousel() {
   return (
     <div>
-      CareerCaraousel
       <section className="bg-coolGray-50 py-4">
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap -m-3">
@@ -66,7 +65,7 @@ function CareerCaraousel() {
                   <div className="w-full lg:w-auto p-2"></div>
                   <div className="w-full lg:w-auto">
                     <button className="flex flex-wrap justify-center w-full px-4 bg-green-500 hover:bg-green-600 font-medium text-sm text-white border border-green-500 rounded-md shadow-button py-2">
-                      <p>Add to Paths</p>
+                      <p>Show More Info</p>
                     </button>
                   </div>
                 </div>
@@ -132,7 +131,7 @@ function CareerCaraousel() {
                   <div className="w-full lg:w-auto p-2"></div>
                   <div className="w-full lg:w-auto">
                     <button className="flex flex-wrap justify-center w-full px-4 bg-green-500 hover:bg-green-600 font-medium text-sm text-white border border-green-500 rounded-md shadow-button py-2">
-                      <p>Add to Paths</p>
+                      <p>Show More Info</p>
                     </button>
                   </div>
                 </div>
@@ -152,7 +151,7 @@ function CareerCaraousel() {
                       </div>
                       <div className="w-auto">
                         <h2 className="text-sm font-medium text-coolGray-900">
-                          Nurse Anesthetist
+                          Lumberjack
                         </h2>
                       </div>
                     </div>
@@ -198,7 +197,7 @@ function CareerCaraousel() {
                   <div className="w-full lg:w-auto p-2"></div>
                   <div className="w-full lg:w-auto">
                     <button className="flex flex-wrap justify-center w-full px-4 bg-green-500 hover:bg-green-600 font-medium text-sm text-white border border-green-500 rounded-md shadow-button py-2">
-                      <p>Add to Paths</p>
+                      <p>Show More Info</p>
                     </button>
                   </div>
                 </div>
