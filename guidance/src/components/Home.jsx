@@ -18,8 +18,8 @@ function Home() {
           <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight">Unlock the Full Potential of Your Education</h1>
           <p className="mb-8 text-lg md:text-xl text-gray-500 font-medium">See how long your education investment will take to pay off and plan for a securce financial path.</p>
           <div className="flex flex-wrap">
-            <div className="w-full md:w-auto py-1 md:py-0 md:mr-4"><a className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 border border-green-500 rounded-md shadow-sm" href="#"><Link to="/SignUp"> Sign up For Free</Link></a></div>
-            <div className="w-full md:w-auto py-1 md:py-0"><a className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-coolGray-800 font-medium text-center bg-white hover:bg-gray-100 focus:ring-2 focus:ring-coolGray-200 focus:ring-opacity-50 border border-gray-200 rounded-md shadow-sm" href="#"><Link to="/SignIn"> Log In</Link></a></div>
+            <div className="w-full md:w-auto py-1 md:py-0 md:mr-4"><a className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 border border-green-500 rounded-md shadow-sm" href="#"><Link to="/signup"> Sign up For Free</Link></a></div>
+            <div className="w-full md:w-auto py-1 md:py-0"><a className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-coolGray-800 font-medium text-center bg-white hover:bg-gray-100 focus:ring-2 focus:ring-coolGray-200 focus:ring-opacity-50 border border-gray-200 rounded-md shadow-sm" href="#"><Link to="/yourpaths"> Log In</Link></a></div>
           </div>
         </div>
         <div className="w-full md:w-1/2 px-4">
