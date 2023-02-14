@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import SignIn from "./SignIn";
+
 
 function SignUp() {
   return (
@@ -110,13 +113,13 @@ function SignUp() {
                 </a>
                 <p className="text-center">
                   <span className="text-xs font-medium">
-                    Already have an account?
+                    Already have an account? 
                   </span>
                   <a
                     className="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline"
                     href="#"
-                  >
-                    Sign In
+                  > 
+                    <Link to="/SignIn"> Sign In</Link>
                   </a>
                 </p>
               </form>
