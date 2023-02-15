@@ -1,9 +1,12 @@
-import React from 'react'
-import NavBarTwo from "./NavBarTwo"
-import YourPathsCard from './YourPathsCard'
-import {useState, useEffect} from 'react'
+import React from "react";
+import NavBarTwo from "./NavBarTwo";
+import YourPathsCard from "./YourPathsCard";
+import { useState, useEffect } from "react";
 
 function YourPaths() {
+  const [yourPaths, setYourPaths] = useState([]);
+  const [text, setText] = useState("");
+
 
 const [yourPaths, setYourPaths] = useState([])
 
@@ -18,7 +21,9 @@ useEffect(() => {
 
 
 const pathCard = yourPaths.map((path) => {return <YourPathsCard path= {path} key= {path.id} />})
-
+  const pathCard = yourPaths.map((path) => {
+    return <YourPathsCard path={path} key={path.id} />;
+  });
 
   return (
     <div>
@@ -26,7 +31,7 @@ const pathCard = yourPaths.map((path) => {return <YourPathsCard path= {path} key
       <h2 className="pb-5 mb-4 text-4xl font-bold tracking-tighter text-center md:text-5xl text-coolGray-900">Your Paths&nbsp;</h2>
     {pathCard}
     </div>
-  )
+  );
 }
 
-export default YourPaths
+export default YourPaths;
