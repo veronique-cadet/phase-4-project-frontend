@@ -37,14 +37,12 @@ function CareerCaraousel({careers}) {
                 <div className="flex flex-wrap px-4 py-6 -m-2 border-b border-coolGray-100">
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* $4k */}
                         {`$` +
                           careers[0].avg_cost_edu
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-
                       </p>
                       <p className="text-xs font-medium text-coolGray-400">
                         Total Cost
@@ -53,15 +51,13 @@ function CareerCaraousel({careers}) {
                   </div>
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* 1 Year */}
                         {careers[0].time_to_complete + " years"}
                       </p>
                       <p
-                        className="text-xs text-coolGray-400 font-medium"
+                        className="text-xs font-medium text-coolGray-400"
                         // contentEditable="false"
-
                       >
                         Total Time
                       </p>
@@ -69,13 +65,12 @@ function CareerCaraousel({careers}) {
                   </div>
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* $1,000,000 */}
                         {`$` +
                           careers[0].ave_salary
                             .toFixed(2)
- 
+                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                       </p>
                       <p className="text-xs font-medium text-coolGray-400">
                         Average Salary
@@ -85,11 +80,13 @@ function CareerCaraousel({careers}) {
                 </div>
                 <div className="flex flex-wrap justify-center p-6">
                   <div className="w-full p-2 lg:w-auto"></div>
-
-                  <Link to="/careerdata"><button className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button">
-
+                  <div className="w-full lg:w-auto">
+                    <button
+                      className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button"
+                      onClick={() => showsInfo(0)}
+                    >
                       <p>Show More Info</p>
-                    </button></Link>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -119,14 +116,12 @@ function CareerCaraousel({careers}) {
                 <div className="flex flex-wrap px-4 py-6 -m-2 border-b border-coolGray-100">
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* $4k */}
                         {`$` +
                           careers[1].avg_cost_edu
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-
                       </p>
                       <p className="text-xs font-medium text-coolGray-400">
                         Total Cost
@@ -135,15 +130,13 @@ function CareerCaraousel({careers}) {
                   </div>
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* 1 Year */}
                         {careers[1].time_to_complete + " years"}
                       </p>
                       <p
-                        className="text-xs text-coolGray-400 font-medium"
+                        className="text-xs font-medium text-coolGray-400"
                         // contentEditable="false"
-
                       >
                         Total Time
                       </p>
@@ -151,13 +144,13 @@ function CareerCaraousel({careers}) {
                   </div>
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-             <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* $1,000,000 */}
                         {`$` +
                           careers[1].ave_salary
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-      </p>
+                      </p>
                       <p className="text-xs font-medium text-coolGray-400">
                         Average Salary
                       </p>
@@ -167,14 +160,12 @@ function CareerCaraousel({careers}) {
                 <div className="flex flex-wrap justify-center p-6">
                   <div className="w-full p-2 lg:w-auto"></div>
                   <div className="w-full lg:w-auto">
-
-                    <button
-                      className="flex flex-wrap justify-center w-full px-4 bg-green-500 hover:bg-green-600 font-medium text-sm text-white border border-green-500 rounded-md shadow-button py-2"
+                  <Link to="/careerdata"><button
+                      className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button"
                       onClick={() => showsInfo(0)}
                     >
-
                       <p>Show More Info</p>
-                    </button>
+                    </button></Link>
                   </div>
                 </div>
               </div>
@@ -204,14 +195,12 @@ function CareerCaraousel({careers}) {
                 <div className="flex flex-wrap px-4 py-6 -m-2 border-b border-coolGray-100">
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* $4k */}
                         {`$` +
                           careers[2].avg_cost_edu
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-
                       </p>
                       <p className="text-xs font-medium text-coolGray-400">
                         Total Cost
@@ -220,15 +209,13 @@ function CareerCaraousel({careers}) {
                   </div>
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* 1 Year */}
                         {careers[2].time_to_complete + " years"}
                       </p>
                       <p
-                        className="text-xs text-coolGray-400 font-medium"
+                        className="text-xs font-medium text-coolGray-400"
                         // contentEditable="false"
-
                       >
                         Total Time
                       </p>
@@ -236,14 +223,12 @@ function CareerCaraousel({careers}) {
                   </div>
                   <div className="w-full p-2 md:w-1/2 lg:w-1/3">
                     <div className="text-center">
-
-                      <p className="mb-1 text-xs text-green-500 font-semibold">
+                      <p className="mb-1 text-xs font-semibold text-green-500">
                         {/* $1,000,000 */}
                         {`$` +
                           careers[2].ave_salary
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-
                       </p>
                       <p className="text-xs font-medium text-coolGray-400">
                         Average Salary
@@ -254,11 +239,10 @@ function CareerCaraousel({careers}) {
                 <div className="flex flex-wrap justify-center p-6">
                   <div className="w-full p-2 lg:w-auto"></div>
                   <div className="w-full lg:w-auto">
-          <button
-                      className="flex flex-wrap justify-center w-full px-4 bg-green-500 hover:bg-green-600 font-medium text-sm text-white border border-green-500 rounded-md shadow-button py-2"
+                    <button
+                      className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button"
                       onClick={() => showsInfo(0)}
                     >
-
                       <p>Show More Info</p>
                     </button>
                   </div>
