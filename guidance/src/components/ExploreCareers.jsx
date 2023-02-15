@@ -5,6 +5,9 @@ import NavBarTwo from './NavBarTwo';
 function ExploreCareers() {
   const [careers, setCareers] = useState
   ([])
+  const [filteredData, setFilteredData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+  
   const [search, setSearch] = useState("")
   // const displayedCareers = careers.filter((career) =>
   //   career.name.toLowerCase().includes(search.toLowerCase())
@@ -20,20 +23,41 @@ useEffect(() => {
   }, []);
   if (!careers[0]) return null 
     console.log(careers);
-    console.log(search)
+    // console.log(search)
+
+    const handleFilter = (event) => {
+      const searchWord = event.target.value;
+      setWordEntered(searchWord); 
+      const newFilter = careers.filter((value)=>{
+        return value.name.toLowerCase().includes(searchWord.toLowerCase());
+        console.log(value.name)
+      })
+      if (searchWord === "") {
+        setFilteredData([]); 
+  
+      } else {
+        setFilteredData(newFilter)
+      }
+    }
+    const clearInput = () => {
+      setFilteredData([]);
+      setWordEntered("");
+    };
 
 
   return (
     <div>
+
       <NavBarTwo />
 
       <section className="bg-gray-50 py-4">
 
         <div className="container px-4 mx-auto">
-      <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
-        Hi, Future Student!{" "}
-      </h1>
-          <div className="h-full p-6 overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
+          <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
+            Hi, Future Student!{" "}
+          </h1>
+          <div className="p-6 h-full border border-gray-100 overflow-hidden bg-white rounded-md shadow-dashboard">
+
             <div className="pb-6 border-b border-gray-100">
               <div className="flex flex-wrap items-center justify-between -m-2">
                 <div className="w-full p-2 md:w-auto">
@@ -67,14 +91,30 @@ useEffect(() => {
                       className="w-full px-4 py-2.5 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input"
                       type="text"
                       placeholder="Frontend Developer"
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
+                      value={wordEntered}
+                      // onChange={(e) => setSearch(e.target.value)}
+                      onChange={handleFilter}
                     />
+                    {filteredData.length != 0 && (
+                      <div className="w-full px-4 py-2.5 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input">
+                        {filteredData.slice(0, 15).map((value, key) => {
+                          return (
+                            <a
+                              className="w-full px-1 py-1 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input"
+                              href={value.link}
+                              target="_blank"
+                            >
+                              <p>{value.name} </p>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
-            <div className="py-6 border-b border-gray-100">
+            {/* <div className="py-6 border-b border-gray-100">
               <div className="w-full md:w-9/12">
                 <div className="flex flex-wrap -m-3">
                   <div className="w-full p-3 md:w-1/3">
@@ -106,10 +146,10 @@ useEffect(() => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
-          <p className="mb-4 text-lg md:text-xl text-gray-500 font-medium">
+          <p className="mb-4 text-lg md:text-xl text-gray-500 font-medium py-10">
             Investing in education can be one of the biggest decisions you make
             in your life. With our website, you can calculate exactly how long
             it will take to recoup your investment based on your career path and
@@ -125,7 +165,7 @@ useEffect(() => {
           </h3>
         </div>
       </section>
-      <CareerCaraousel careers={careers}/>
+      <CareerCaraousel careers={careers} />
     </div>
   );
 }
