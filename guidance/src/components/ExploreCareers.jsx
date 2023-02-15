@@ -5,6 +5,9 @@ import NavBarTwo from './NavBarTwo';
 function ExploreCareers() {
   const [careers, setCareers] = useState
   ([])
+  const [filteredData, setFilteredData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+  
   const [search, setSearch] = useState("")
   // const displayedCareers = careers.filter((career) =>
   //   career.name.toLowerCase().includes(search.toLowerCase())
@@ -20,17 +23,36 @@ useEffect(() => {
   }, []);
   if (!careers[0]) return null 
     console.log(careers);
-    console.log(search)
+    // console.log(search)
+
+    const handleFilter = (event) => {
+      const searchWord = event.target.value;
+      setWordEntered(searchWord); 
+      const newFilter = careers.filter((value)=>{
+        return value.name.toLowerCase().includes(searchWord.toLowerCase());
+        console.log(value.name)
+      })
+      if (searchWord === "") {
+        setFilteredData([]); 
+  
+      } else {
+        setFilteredData(newFilter)
+      }
+    }
+    const clearInput = () => {
+      setFilteredData([]);
+      setWordEntered("");
+    };
 
 
   return (
     <div>
-      <NavBarTwo />
+      {/* <NavBarTwo /> */}
       <section className="bg-gray-50 py-4">
         <div className="container px-4 mx-auto">
-      <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
-        Hi, Future Student!{" "}
-      </h1>
+          <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
+            Hi, Future Student!{" "}
+          </h1>
           <div className="p-6 h-full border border-gray-100 overflow-hidden bg-white rounded-md shadow-dashboard">
             <div className="pb-6 border-b border-gray-100">
               <div className="flex flex-wrap items-center justify-between -m-2">
@@ -65,9 +87,25 @@ useEffect(() => {
                       className="w-full px-4 py-2.5 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input"
                       type="text"
                       placeholder="Frontend Developer"
-                      value={search}
-                      onChange={(e) => setSearch(e.target.value)}
+                      value={wordEntered}
+                      // onChange={(e) => setSearch(e.target.value)}
+                      onChange={handleFilter}
                     />
+                    {filteredData.length != 0 && (
+                      <div className="dataResult">
+                        {filteredData.slice(0, 15).map((value, key) => {
+                          return (
+                            <a
+                              className="dataItem"
+                              href={value.link}
+                              target="_blank"
+                            >
+                              <p>{value.name} </p>
+                            </a>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -123,7 +161,7 @@ useEffect(() => {
           </h3>
         </div>
       </section>
-      <CareerCaraousel careers={careers}/>
+      <CareerCaraousel careers={careers} />
     </div>
   );
 }
