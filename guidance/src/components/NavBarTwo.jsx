@@ -14,14 +14,15 @@ function NavBarTwo() {
         </div>
         <div className="hidden xl:block xl:w-1/3">
           <ul className="flex justify-center">
-            <li className="mr-12"><a className="text-coolGray-500 hover:text-coolGray-900 font-medium" href="#" contenteditable="false"></a></li>
-            <li className="mr-12"><a className="text-gray-500  hover:text-green-500 font-medium" href="#" contenteditable="false">Browse Careers</a></li>
-            <li className="mr-12"><a className="text-gray-500 hover:text-green-500 font-medium" href="#" contenteditable="false">Your Paths</a></li>
+            <li className="mr-12"><a className="text-coolGray-500 hover:text-coolGray-900 font-medium" href="#" contentEditable="false"
+            ></a></li>
+            <li className="mr-12"><a className="text-gray-500  hover:text-green-500 font-medium" href="#" contentEditable="false">Browse Careers</a></li>
+            <li className="mr-12"><a className="text-gray-500 hover:text-green-500 font-medium" href="#" contentEditable="false">Your Paths</a></li>
             <li><a className="text-grey-500 hover:text-coolGray-900 font-medium" href="#" contenteditable="false"></a></li>
           </ul>
         </div>
         <div className="hidden xl:block xl:w-1/3">
-          <div className="flex items-center justify-end"><a className="inline-block py-2 px-4 mr-2 leading-5 text-gray-500  hover:text-green-500 bg-transparent font-medium rounded-md" href="#" contenteditable="false">Edit Profile</a><a className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-500 hover:bg-green-600 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md" href="#" contenteditable="false">Log Out</a></div>
+          <div className="flex items-center justify-end"><a className="inline-block py-2 px-4 mr-2 leading-5 text-gray-500  hover:text-green-500 bg-transparent font-medium rounded-md" href="#" contentEditable="false">Edit Profile</a><a className="inline-block py-2 px-4 text-sm leading-5 text-green-50 bg-green-500 hover:bg-green-600 font-medium focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md" href="#" contentEditable="false">Log Out</a></div>
         </div>
       </div>
       <button className="navbar-burger self-center xl:hidden">

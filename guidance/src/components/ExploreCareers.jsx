@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect }  from 'react'
 import CareerCaraousel from './CareerCaraousel'
-import NavBar from './NavBar';
+import NavBarTwo from './NavBarTwo';
 
 function ExploreCareers() {
+  const [careers, setCareers] = useState
+  ([])
+  const [search, setSearch] = useState("")
+  // const displayedCareers = careers.filter((career) =>
+  //   career.name.toLowerCase().includes(search.toLowerCase())
+  // );
+
+useEffect(() => {
+    fetch("http://localhost:3000/careers")
+      .then((res) => res.json())
+      .then((data) => {
+        setCareers(data);
+        console.log(careers);
+      });
+  }, []);
+  if (!careers[0]) return null 
+    console.log(careers);
+    console.log(search)
+
+
   return (
     <div>
-      <NavBar />
+      {/* <NavBarTwo /> */}
       <section className="bg-gray-50 py-4">
         <div className="container px-4 mx-auto">
       <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
@@ -45,6 +65,8 @@ function ExploreCareers() {
                       className="w-full px-4 py-2.5 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input"
                       type="text"
                       placeholder="Frontend Developer"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
                     />
                   </div>
                 </div>
@@ -85,7 +107,7 @@ function ExploreCareers() {
             </div>
           </div>
 
-          <p class="mb-4 text-lg md:text-xl text-gray-500 font-medium">
+          <p className="mb-4 text-lg md:text-xl text-gray-500 font-medium">
             Investing in education can be one of the biggest decisions you make
             in your life. With our website, you can calculate exactly how long
             it will take to recoup your investment based on your career path and
@@ -94,14 +116,14 @@ function ExploreCareers() {
             future.
           </p>
           <h3
-            class="mb-4 text-xl md:text-3xl leading-tight text-darkCoolGray-900 font-bold tracking-tighter"
-            contenteditable="false"
+            className="mb-4 text-xl md:text-3xl leading-tight text-darkCoolGray-900 font-bold tracking-tighter"
+            // contentEditable="false"
           >
             Looking for inspo? Check out the options below:{" "}
           </h3>
         </div>
       </section>
-      <CareerCaraousel />
+      <CareerCaraousel careers={careers}/>
     </div>
   );
 }
