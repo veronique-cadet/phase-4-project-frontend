@@ -14,6 +14,7 @@ function NavBarTwo() {
         </div>
         <div className="hidden xl:block xl:w-1/3">
           <ul className="flex justify-center">
+
             <li className="mr-12"><a className="font-medium text-coolGray-500 hover:text-coolGray-900" href="#" contenteditable="false"></a></li>
             <Link to="/explore"><li className="mr-12"><a className="font-medium text-gray-500 hover:text-green-500" href="#" contenteditable="false">Browse Careers</a></li></Link>
             <Link to="/yourpaths"><li className="mr-12"><a className="font-medium text-gray-500 hover:text-green-500" href="#" contenteditable="false">Your Paths</a></li></Link>
@@ -22,6 +23,7 @@ function NavBarTwo() {
         </div>
         <div className="hidden xl:block xl:w-1/3">
           <div className="flex items-center justify-end"><Link to="/editprofile"><a className="inline-block px-4 py-2 mr-2 font-medium leading-5 text-gray-500 bg-transparent rounded-md hover:text-green-500" contenteditable="false">Edit Profile</a></Link><Link to="/home"><a className="inline-block px-4 py-2 text-sm font-medium leading-5 bg-green-500 rounded-md text-green-50 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" href="#" contenteditable="false">Log Out</a></Link></div>
+
         </div>
       </div>
       <button className="self-center navbar-burger xl:hidden">
