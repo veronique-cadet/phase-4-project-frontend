@@ -7,6 +7,7 @@ import Home from "./components/Home"
 import Footer from "./components/Footer"
 import CareerCaraousel from "./components/CareerCaraousel";
 import ExploreCareers from "./components/ExploreCareers";
+import YourPaths from "./components/YourPaths";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/carousel" element={<CareerCaraousel />}></Route>
         <Route path="/explore" element={<ExploreCareers />}></Route>
+        <Route path="/yourpaths" element={<YourPaths />}></Route>
       </Routes>
     </div>
   );
