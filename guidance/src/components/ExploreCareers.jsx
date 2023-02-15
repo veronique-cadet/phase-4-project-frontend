@@ -25,7 +25,7 @@ useEffect(() => {
 
   return (
     <div>
-      {/* <NavBarTwo /> */}
+      <NavBarTwo />
       <section className="bg-gray-50 py-4">
         <div className="container px-4 mx-auto">
       <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
