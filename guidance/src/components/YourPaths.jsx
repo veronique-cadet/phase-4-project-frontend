@@ -9,16 +9,25 @@ function YourPaths() {
   <div className="pt-6 bg-white overflow-hidden border border-gray-100 rounded-md shadow-dashboard content-center pt-20">
     <h2 className="mb-4 text-4xl md:text-5xl text-coolGray-900 font-bold tracking-tighter pb-10 text-center">Your Paths&nbsp;</h2>
     <div className="">
-      <table className="w-full"><tbody><tr className="whitespace-nowrap h-11 bg-gray-50 bg-opacity-80"><th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-left pl-5 pb-10">
+      <table className="w-full"><tbody><tr className="whitespace-nowrap h-11 bg-gray-500 bg-opacity-80"><th className="whitespace-nowrap text-lg md:text-xl  text-white
+      -500 font-medium uppercase text-left pl-5 
+      ">
         <p>CAREER&nbsp;</p>
         </th>
-        <th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-center pb-7">AVG COST OF&nbsp; TUITION</th>
-        <th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-center pb-7">TIME TO COMPLETE</th>
-        <th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-center pb-7">AVG SALARY</th>
-        <th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-center pb-7">LOAN TOTAL</th>
-        <th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-center pb-7">ESTMITATED TOTAL COST OF EDUCATION</th>
-        <th className="whitespace-nowrap text-lg md:text-xl  text-gray-500 font-medium uppercase text-center pb-7">BREAK EVEN</th>
         <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500 font-medium uppercase text-center">AVG COST OF&nbsp; TUITION</th>
+        <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500 font-medium uppercase text-cente">TIME TO COMPLETE</th>
+        <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500 font-medium uppercase text-center ">AVG SALARY</th>
+        <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500 font-medium uppercase text-center ">LOAN TOTAL</th>
+        <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500 font-medium uppercase text-center">ESTMITATED TOTAL COST OF EDUCATION</th>
+        <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500 font-medium uppercase text-center ">BREAK EVEN</th>
+        <th className="whitespace-nowrap text-lg md:text-xl  text-white
+        -500
         -500 font-medium uppercase text-center">Remove</th>
         </tr><tr className="h-18 border-b border-gray-100"><th className="whitespace-nowrap px-4 bg-white text-left py-2">
         <div className="flex items-center -m-2">
@@ -37,6 +46,7 @@ function YourPaths() {
         <th className="whitespace-nowrap px-4 bg-white text-lg md:text-xl text-green-500 text-center">43.5%</th>
         <th className="whitespace-nowrap px-4 bg-white text-lg md:text-xl text-green-500 text-center">$12,450.00</th>
         <th className="whitespace-nowrap px-4 bg-white text-lg md:text-xl text-gray-800 text-center">14,652</th>
+        <th className="whitespace-nowrap px-4 bg-white text-lg md:text-xl text-gray-800 text-center">Delete</th>
         </tr><tr className="h-18 border-b border-gray-100"><th className="whitespace-nowrap px-4 bg-white text-left py-2">
 
         </th>
