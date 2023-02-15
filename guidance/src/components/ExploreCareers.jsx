@@ -1,29 +1,29 @@
 import React from 'react'
 import CareerCaraousel from './CareerCaraousel'
-import NavBar from './NavBar';
+import NavBarTwo from './NavBarTwo';
 
 function ExploreCareers() {
   return (
     <div>
-      <NavBar />
-      <section className="bg-gray-50 py-4">
+      <NavBarTwo />
+      <section className="py-4 bg-gray-50">
         <div className="container px-4 mx-auto">
-      <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
+      <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
         Hi, Future Student!{" "}
       </h1>
-          <div className="p-6 h-full border border-gray-100 overflow-hidden bg-white rounded-md shadow-dashboard">
+          <div className="h-full p-6 overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
             <div className="pb-6 border-b border-gray-100">
               <div className="flex flex-wrap items-center justify-between -m-2">
-                <div className="w-full md:w-auto p-2">
-                  <h2 className="text-gray-900 text-lg font-semibold">
+                <div className="w-full p-2 md:w-auto">
+                  <h2 className="text-lg font-semibold text-gray-900">
                     Explore Career Paths Below.{" "}
                   </h2>
                 </div>
-                <div className="w-full md:w-auto p-2">
+                <div className="w-full p-2 md:w-auto">
                   <div className="flex flex-wrap justify-between -m-1.5">
                     <div className="w-full md:w-auto p-1.5"></div>
                     <div className="w-full md:w-auto p-1.5">
-                      <button className="flex flex-wrap justify-center w-full px-4 py-2 bg-green-500 hover:bg-green-600 font-medium text-sm text-white border border-green-500 rounded-md shadow-button">
+                      <button className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button">
                         <p>Search</p>
                       </button>
                     </div>
@@ -35,12 +35,12 @@ function ExploreCareers() {
             <div className="py-6 border-b border-gray-100">
               <div className="w-full md:w-9/12">
                 <div className="flex flex-wrap -m-3">
-                  <div className="w-full md:w-1/3 p-3">
-                    <p className="text-sm text-gray-800 font-semibold">
+                  <div className="w-full p-3 md:w-1/3">
+                    <p className="text-sm font-semibold text-gray-800">
                       Enter and Select Job Title{" "}
                     </p>
                   </div>
-                  <div className="w-full md:flex-1 p-3">
+                  <div className="w-full p-3 md:flex-1">
                     <input
                       className="w-full px-4 py-2.5 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input"
                       type="text"
@@ -53,15 +53,15 @@ function ExploreCareers() {
             <div className="py-6 border-b border-gray-100">
               <div className="w-full md:w-9/12">
                 <div className="flex flex-wrap -m-3">
-                  <div className="w-full md:w-1/3 p-3">
-                    <p className="text-sm text-gray-800 font-semibold">
+                  <div className="w-full p-3 md:w-1/3">
+                    <p className="text-sm font-semibold text-gray-800">
                       Enter and Select Job Title{" "}
                     </p>
                   </div>
-                  <div className="w-full md:flex-1 p-3">
+                  <div className="w-full p-3 md:flex-1">
                     <div className="relative">
                       <svg
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                        className="absolute transform -translate-y-1/2 right-4 top-1/2"
                         width="16"
                         height="16"
                         viewBox="0 0 16 16"

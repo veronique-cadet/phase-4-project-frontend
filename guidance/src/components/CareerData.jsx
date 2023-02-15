@@ -1,8 +1,12 @@
 import React from 'react'
+import NavBarTwo from './NavBarTwo'
+import Footer from "./Footer.jsx"
 
 function CareerData() {
   return (
-    <div>CareerData</div>
+    <div><NavBarTwo/>
+    <Footer />
+    </div>
   )
 }
 
