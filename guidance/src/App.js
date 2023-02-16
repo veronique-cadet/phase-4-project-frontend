@@ -12,6 +12,7 @@ import CareerData from "./components/CareerData";
 import EditProfile from "./components/EditProfile";
 import CarouselCard from "./components/CarouselCard";
 import { useState } from "react";
+import DataTable from "./components/DataTable";
 
 function App() {
   const [careerId, setCareerId] = useState(0)
@@ -28,6 +29,7 @@ function App() {
         <Route path="/careerdata" element={<CareerData careerId={careerId}/>}></Route>
         <Route path="/editprofile" element={<EditProfile />}></Route>
         <Route path="/card" element={<CarouselCard />}></Route>
+        <Route path="/data" element={<DataTable />}></Route>
       </Routes>
     </div>
   );
