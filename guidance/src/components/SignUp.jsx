@@ -1,11 +1,42 @@
-import React from "react";
+import React, {useState} from "react";
 
-import { Link } from "react-router-dom";
-import SignIn from "./SignIn";
-
+import { Link, useNavigate } from "react-router-dom";
 
 
 function SignUp() {
+
+const [firstName,setFirstName] = useState('')
+const [lastName,setLastName] = useState('')
+const [signUpEmail,setSignUpEmail] = useState('')
+const [signUpPassword,setSignUpPassword] = useState('')
+const navigate = useNavigate()
+
+  const handleSignUp =(e)=>{
+    e.preventDefault()
+    console.log("clicked")
+
+    fetch(`http://localhost:3000/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        first_name:firstName,
+        last_name:lastName,
+        email:signUpEmail, 
+        password:signUpPassword 
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // setUser(data)
+        console.log(data)
+      
+      })
+      .then(navigate("/signin"))
+
+    }
+
   return (
     <div>
       <section
@@ -38,12 +69,29 @@ function SignUp() {
                     className="block mb-2 text-coolGray-800 font-medium"
                     htmlFor=""
                   >
-                    Name*
+                    First Name*
                   </label>
                   <input
                     className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
                     placeholder="Hassan"
+                    value = {firstName}
+                    onChange = {(e) => setFirstName(e.target.value)}
+                  />
+                </div>
+                <div className="mb-6">
+                  <label
+                    className="block mb-2 text-coolGray-800 font-medium"
+                    htmlFor=""
+                  >
+                    Last Name*
+                  </label>
+                  <input
+                    className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                    type="name"
+                    placeholder="Razak"
+                    value = {lastName}
+                    onChange = {(e) => setLastName(e.target.value)}
                   />
                 </div>
                 <div className="mb-6">
@@ -57,6 +105,8 @@ function SignUp() {
                     className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
                     placeholder="student@guidance.edu"
+                    value = {signUpEmail}
+                    onChange = {(e) => setSignUpEmail(e.target.value)}
                   />
                 </div>
                 <div className="mb-4">
@@ -70,6 +120,8 @@ function SignUp() {
                     className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="password"
                     placeholder="************"
+                    value = {signUpPassword}
+                    onChange = {(e) => setSignUpPassword(e.target.value)}
                   />
                 </div>
                 <div className="flex flex-wrap items-center justify-between mb-6">
@@ -98,12 +150,13 @@ function SignUp() {
                     </a>
                   </div>
                 </div>
-                <a
+                <button
                   className="inline-block py-3 px-7 mb-4 w-full text-base text-green-50 font-medium text-center leading-6 bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm"
                   href="#"
+                  onClick={handleSignUp}
                 >
                   Sign Up
-                </a>
+                </button>
                 <a
                   className="inline-flex items-center justify-center py-3 px-7 mb-6 w-full text-base text-coolGray-500 font-medium text-center leading-6 bg-white border border-coolGray-100 hover:border-coolGray-200 rounded-md shadow-sm"
                   href="#"
