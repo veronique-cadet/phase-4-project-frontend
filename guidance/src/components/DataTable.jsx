@@ -13,8 +13,20 @@ class DataTable extends Component {
           id: "basic-bar"
         },
         xaxis: {
-          categories: [1991, 1992, 1993, 1994, 1995]
+          categories: [1, 2, "Average", 3, 4],
+          title: {
+            text: "Salary Range for Profession",
+            offsetX: 0,
+            offsetY: 0,
+            style: {
+                color: undefined,
+                fontSize: '12px',
+                fontFamily: 'Helvetica, Arial, sans-serif',
+                fontWeight: 600,
+                cssClass: 'apexcharts-xaxis-title',
+            }
         },
+      },
   
         markers: {
           colors: ["#39FF14"
