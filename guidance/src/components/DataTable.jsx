@@ -4,8 +4,8 @@ import Chart from "react-apexcharts";
 
 
 class DataTable extends Component {
-  constructor(props) {
-    super(props);
+  constructor({currentCareer, setCurrentCareer}) {
+    super({currentCareer, setCurrentCareer});
 
     this.state = {
       options: {
@@ -40,7 +40,8 @@ class DataTable extends Component {
       series: [
         {
           name: "series-1",
-          data: [30, 40, 45, 50, 49]
+          data: [currentCareer.salary_1,currentCareer.salary_2, currentCareer.ave_salary,currentCareer.salary_3, currentCareer.salary_4
+          ]
         }
       ]
      
