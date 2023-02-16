@@ -82,10 +82,10 @@ function CareerData({careerId}) {
       
       <p className="text-base text-center">How much do Music Teachers make?</p>
       
-      <section className="py-4 bg-gray-50">
+      <section className="pb-4 bg-gray-50">
         <div className="container px-4 mx-auto">
           <div className="h-full p-6 pb-0 mx-auto overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
-            <div className="flex flex-wrap items-center justify-between -m-2">
+            <div className="flex flex-col items-center justify-between -m-2">
               <div className="w-auto p-2">
                 <h2 className="text-lg font-semibold text-gray-900">Average Salary : $50,000</h2>
               </div>
