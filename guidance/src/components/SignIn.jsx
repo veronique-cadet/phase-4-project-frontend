@@ -11,7 +11,6 @@ function SignIn() {
   
   const signIn =(e)=>{
     e.preventDefault()
-    console.log("arjdg;joe")
 
     fetch(`http://localhost:3000/login`, {
       method: "POST",
