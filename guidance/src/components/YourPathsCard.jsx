@@ -3,7 +3,7 @@ import React from 'react'
 function YourPathsCard({path}) {
   return (
     <section className="transition duration-200 rounded-md bg-gray-50"><div className="px-4">
-  <div className="content-center pt-10 pb-10 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
+  <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
     <div className= "">
       <table className="w-full transition duration-200 rounded-md"><tbody><tr className="bg-gray-400 whitespace-nowrap h-11 bg-opacity-80"><th className="pl-5 text-lg font-medium text-left text-white uppercase whitespace-nowrap md:text-xl -500 ">
         <p>CAREER&nbsp;</p>
@@ -33,7 +33,7 @@ function YourPathsCard({path}) {
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">43.5%</th>
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">$12,450.00</th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">14,652</th>
-        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">Delete</th>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><img src ="./garbage.png" className="object-contain h-10 ml-auto mr-auto w-7"/></th>
         </tr><tr className="border-b border-gray-100 h-18"><th className="px-4 py-2 text-left bg-white whitespace-nowrap">
 
         </th></tr>

@@ -16,6 +16,7 @@ import DataTable from "./components/DataTable";
 
 function App() {
   const [careerId, setCareerId] = useState(0)
+  const [yourPaths, setYourPaths] = useState([]);
   return (
     <div className="bg-tarnsparent">
       <Routes>
@@ -25,8 +26,8 @@ function App() {
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/carousel" element={<CareerCaraousel />}></Route>
         <Route path="/explore" element={<ExploreCareers careerId={careerId} setCareerId={setCareerId}/>}></Route>
-        <Route path="/yourpaths" element={<YourPaths />}></Route>
-        <Route path="/careerdata" element={<CareerData careerId={careerId}/>}></Route>
+        <Route path="/yourpaths" element={<YourPaths yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
+        <Route path="/careerdata" element={<CareerData careerId={careerId} yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
         <Route path="/editprofile" element={<EditProfile />}></Route>
         <Route path="/card" element={<CarouselCard />}></Route>
         <Route path="/data" element={<DataTable />}></Route>
