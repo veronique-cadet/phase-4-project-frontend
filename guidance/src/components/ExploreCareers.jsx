@@ -95,9 +95,11 @@ function ExploreCareers({ careerId, setCareerId }) {
                         {filteredData.slice(0, 15).map((value, key) => {
                           return (
                             <a
-                              className="w-1/2 px-1 py-1 text-base font-normal text-green-900 border border-gray-200 rounded-lg outline-none focus:border-green-500 shadow-input break-after-all"
+                              className="w-1/2 px-1 py-1 text-base font-normal text-green-900 borderrounded-lg outline-none focus:border-green-500 shadow-input break-after-all"
                               href={value.link}
                               target="_blank"
+                              onClick={()=>{setWordEntered(value.name)}}
+
                             >
                               <p>{value.name} </p>
                             </a>
