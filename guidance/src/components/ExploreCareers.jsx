@@ -2,7 +2,7 @@ import React, { useState, useEffect }  from 'react'
 import CareerCaraousel from './CareerCaraousel'
 import NavBarTwo from './NavBarTwo';
 
-function ExploreCareers() {
+function ExploreCareers({careerId, setCareerId}) {
   const [careers, setCareers] = useState
   ([])
   const [filteredData, setFilteredData] = useState([]);
@@ -165,7 +165,7 @@ useEffect(() => {
           </h3>
         </div>
       </section>
-      <CareerCaraousel careers={careers} />
+      <CareerCaraousel careers={careers} careerId={careerId} setCareerId={setCareerId}/>
     </div>
   );
 }

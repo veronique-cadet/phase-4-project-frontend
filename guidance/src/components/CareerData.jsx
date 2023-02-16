@@ -2,7 +2,8 @@ import React from 'react'
 import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
 
-function CareerData() {
+function CareerData({careerId}) {
+  console.log(careerId)
   return (
     <div>
       <NavBarTwo />

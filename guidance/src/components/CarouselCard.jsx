@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CarouselCard({ career }) {
-  const showsInfo = (id) => {
-    console.log("showsinfo");
-    console.log(career[id]);
-  };
+function CarouselCard({ career, showsInfo}) {
+//   const showsInfo = (id) => {
+//     console.log("showsinfo");
+//     console.log(career.id);
+//   };
 
   return (
         <div className="w-full p-3 md:w-1/3">
@@ -72,12 +72,15 @@ function CarouselCard({ career }) {
             <div className="flex flex-wrap justify-center p-6">
               <div className="w-full p-2 lg:w-auto"></div>
               <div className="w-full lg:w-auto">
+                        <Link to="/careerdata">
+
                 <button
                   className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button"
-                  onClick={() => showsInfo(0)}
+                  onClick={() => showsInfo(career.id)}
                 >
                   <p>Show More Info</p>
                 </button>
+                </Link>
               </div>
             </div>
           </div>

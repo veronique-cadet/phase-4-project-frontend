@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import CarouselCard from './CarouselCard';
 
-function CareerCaraousel({careers}) {
+function CareerCaraousel({careers, careerId, setCareerId}) {
   const showsInfo=(id)=>{
     console.log("showsinfo")
-    console.log(careers[id])
+    console.log(id)
+    setCareerId(careerId)
   }
   const [threeCareers, setThreeCareers] = useState(careers.slice(0,3))
   return (
@@ -15,7 +16,7 @@ function CareerCaraousel({careers}) {
                 <div className="flex flex-wrap -m-3">
 
           {threeCareers.map((career)=>{
-            return <CarouselCard key={career.id} career={career} />
+            return <CarouselCard key={career.id} career={career} showsInfo={showsInfo}/>
 
           })}              
               </div>
