@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
+import DataTable from "./DataTable"
 
 function CareerData() {
   return (
@@ -49,11 +50,8 @@ function CareerData() {
           <div className="w-full p-2 md:w-1/2">
             <div className="flex flex-wrap justify-end -m-2">
               <div className="w-full p-2 md:w-auto">
-                <button className="flex flex-wrap items-center justify-center w-full px-4 py-3 text-base font-medium text-gray-500 bg-white border border-gray-200 rounded-md hover:border-gray-300 shadow-button">
-                  <svg className="mr-2" width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    
-                  </svg>
-                  <span>Learn More </span>
+                <button className="flex flex-wrap items-center justify-center w-full px-4 py-3 text-base font-medium text-gray-500 bg-white border border-gray-200 rounded-md hover:bg-gray-100 shadow-button">
+                  <a className= "hover:bg-gray-100" >Learn More </a>
                 </button>
               </div>
               <div className="w-full p-2 md:w-auto">
@@ -112,7 +110,7 @@ function CareerData() {
                 <h2 className="text-lg font-semibold text-gray-900">Average Salary : $50,000</h2>
               </div>
               <div className="w-auto p-2">
-                
+                 <DataTable />
               </div>
             </div>
             <div className="relative">
@@ -149,7 +147,7 @@ function CareerData() {
       
       <section className="bg-white" style={{backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: "center"}}>
         <div className="container px-4 mx-auto">
-          <div className="flex flex-wrap justify-center pt-5 text-center -mx10-4">
+          <div className="flex flex-wrap justify-center pt-10 text-center -mx10-4">
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
               <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">100K</h2>
               <p className="text-lg font-medium text-gray-500 md:text-xl">Total Education Cost</p>
@@ -187,6 +185,7 @@ function CareerData() {
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="js/charts-demo.js"></script>
 </body>
+<Footer />
 </div>
   )
 }
