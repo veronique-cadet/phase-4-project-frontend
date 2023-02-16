@@ -70,7 +70,7 @@ function CareerData({careerId, yourPaths, setYourPaths}) {
                 <h2 className="mb-2 text-3xl font-semibold text-black text-7xl">
                   {currentCareer.name}
                   </h2>
-                <p className="pb-1 text-xl text-gray-500 pd-5">K-12 music teachers lead courses in general music education, choir, instruments, and more for students in Kindergarten through 6th grade.</p>
+                <p className="pb-1 text-xl text-gray-500 pd-5"> {currentCareer.description}</p>
               </div>
             </div>
           </div>
@@ -102,20 +102,20 @@ function CareerData({careerId, yourPaths, setYourPaths}) {
         <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="pb-3 mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Education</h2>
       
-      <p className="mb-4 text-base text-center">Minimum Education Required:  Bachelor's Degree</p>
+      <p className="mb-4 text-base text-center">Minimum Education Required: {currentCareer.min_edu_req}</p>
       <section className="pl-20 pr-20 bg-white pt-7" style={{backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')",  backgroundPosition: "center"}}>
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap pb-5 -mx-4 text-center justify-evenly">
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">$18k</h2>
+              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">${ currentCareer.avg_cost_edu/currentCareer.time_to_complete}</h2>
               <p className="text-lg font-medium text-gray-500 md:text-xl">Average Tuition Per Year</p>
             </div>
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">4y</h2>
+              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">{currentCareer.time_to_complete}y</h2>
               <p className="text-lg font-medium text-gray-500 md:text-xl">Average time </p>
             </div>
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">$48k</h2>
+              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">${currentCareer.avg_cost_edu}</h2>
               <p className="text-lg font-medium text-gray-500 md:text-xl">Total Tuition</p>
             </div>
             
@@ -128,17 +128,18 @@ function CareerData({careerId, yourPaths, setYourPaths}) {
         <div className="w-full px-4 mt-5 mb-4 transition rounded-lg duration-5 ration-200 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Salary</h2>
       
-      <p className="text-base text-center">How much do Music Teachers make?</p>
+      <p className="text-base text-center">How much do {currentCareer.name}s make?</p>
       
       <section className="pb-4 bg-gray-50">
         <div className="container px-4 mx-auto">
           <div className="h-full p-6 pb-0 mx-auto overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
             <div className="flex flex-col items-center justify-between -m-2">
               <div className="w-auto p-2">
-                <h2 className="text-lg font-semibold text-gray-900">Average Salary : $50,000</h2>
+                <h2 className="text-lg font-semibold text-gray-900">Average Salary : ${currentCareer.ave_salary
+}</h2>
               </div>
               <div className="w-auto p-2">
-                 <DataTable />
+                 <DataTable currentCareer={currentCareer} setCurrentCareer={setCurrentCareer} />
               </div>
             </div>
             <div className="relative">
@@ -171,21 +172,23 @@ function CareerData({careerId, yourPaths, setYourPaths}) {
         <div className="w-full px-4 mt-5 mb-4 rounded-lg ration-200 mgtransition md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Summary</h2>
       
-      <p className="text-base text-center">Investing $100,000 and 4 years of education to become a Nurse Technician may seem like a significant commitment, but the potential long-term financial benefits are worth considering. Based on the average total salary of $30,000 per year, you can expect to break even on your investment within approximately 3.33 years.</p>
+      <p className="text-base text-center">Investing ${currentCareer.avg_cost_edu
+} and {currentCareer.time_to_complete
+} years of education to become a Nurse Technician may seem like a significant commitment, but the potential long-term financial benefits are worth considering. Based on the average total salary of ${currentCareer.ave_salary} per year, you can expect to break even on your investment within approximately 3.33 years.</p>
       
       <section className="bg-white" style={{backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')", backgroundPosition: "center"}}>
         <div className="container px-4 mx-auto">
           <div className="flex flex-wrap justify-center pt-10 text-center -mx10-4">
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">100K</h2>
+              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">${currentCareer.avg_cost_edu}</h2>
               <p className="text-lg font-medium text-gray-500 md:text-xl">Total Education Cost</p>
             </div>
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">50k</h2>
+              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">${currentCareer.ave_salary}</h2>
               <p className="text-lg font-medium text-gray-500 md:text-xl">Potential Salary</p>
             </div>
             <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">2y</h2>
+              <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">{currentCareer.avg_cost_edu/currentCareer.ave_salary}y</h2>
               <p className="text-lg font-medium text-gray-500 md:text-lg">Amount of years you need to work to breakeven</p>
             </div>
             
