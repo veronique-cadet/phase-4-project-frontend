@@ -14,6 +14,7 @@ function YourPathsCard({path}) {
         <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">LOAN TOTAL</th>
         <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500">EST TOTAL COST OF EDUCATION</th>
         <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">BREAK EVEN</th>
+        <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">PRIORITY</th>
         <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500">Remove</th>
         </tr>
         <tr className="border-b border-gray-100 h-18"><th className="px-4 py-2 text-left bg-white min-w-5 whitespace-nowrap">
@@ -33,6 +34,7 @@ function YourPathsCard({path}) {
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">43.5%</th>
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">$12,450.00</th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">14,652</th>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">14,6th></th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><img src ="./garbage.png" className="object-contain h-10 ml-auto mr-auto w-7"/></th>
         </tr><tr className="border-b border-gray-100 h-18"><th className="px-4 py-2 text-left bg-white whitespace-nowrap">
 
