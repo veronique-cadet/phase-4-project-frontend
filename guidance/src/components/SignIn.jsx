@@ -1,14 +1,13 @@
 import React, {useState} from "react";
 import SignUp from "./SignUp";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 function SignIn() {
 
   const [user, setUser] = useState(null)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
-
+  const navigate = useNavigate()
   
   const signIn =(e)=>{
     e.preventDefault()
@@ -25,8 +24,9 @@ function SignIn() {
       .then((data) => {
         setUser(data)
         console.log(user)
+      
       })
-      .then()
+      .then(navigate('/explore'))
 
     }
 // console.log(user)
