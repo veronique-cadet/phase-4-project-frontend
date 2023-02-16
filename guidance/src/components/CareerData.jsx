@@ -75,7 +75,7 @@ function CareerData({careerId}) {
         </div>
       </section>
       
-      <img className="content-center ml-auto mr-auto rounded-7xl" src="images/Screen-Shot-2023-02-14-at-11-42-36-AM.png" alt=""/>
+      <img className="content-center ml-auto mr-auto h-25 w-25 rounded-7xl" src="./booklogo.png" alt=""/>
       </div>
         <div className="w-full px-4 mt-5 mb-4 transition rounded-lg duration-5 ration-200 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Salary</h2>
