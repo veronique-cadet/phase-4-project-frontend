@@ -10,6 +10,7 @@ import ExploreCareers from "./components/ExploreCareers";
 import YourPaths from "./components/YourPaths";
 import CareerData from "./components/CareerData";
 import EditProfile from "./components/EditProfile";
+import CarouselCard from "./components/CarouselCard";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/yourpaths" element={<YourPaths />}></Route>
         <Route path="/careerdata" element={<CareerData />}></Route>
         <Route path="/editprofile" element={<EditProfile />}></Route>
+        <Route path="/card" element={<CarouselCard />}></Route>
       </Routes>
     </div>
   );

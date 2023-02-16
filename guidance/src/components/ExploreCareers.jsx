@@ -48,7 +48,7 @@ useEffect(() => {
   return (
     <div>
 
-      <NavBarTwo />
+      {/* <NavBarTwo /> */}
 
       <section className="bg-gray-50 py-4">
 
