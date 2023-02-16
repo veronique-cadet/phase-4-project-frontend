@@ -26,7 +26,7 @@ function YourPaths() {
     <div>
       <NavBarTwo />
 
-      <h2 className="pb-5 mb-4 text-4xl font-bold tracking-tighter text-center md:text-5xl text-coolGray-900">Your Paths&nbsp;</h2>
+      <h2 className="pb-5 mt-5 mb-4 text-4xl font-bold tracking-tighter text-center md:text-5xl text-coolGray-900">Your Paths&nbsp;</h2>
     {pathCard}
     <Footer />
 
