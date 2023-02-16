@@ -6,8 +6,8 @@ import {useState, useEffect} from 'react'
 import Footer from "./Footer.jsx"
 
 
-function YourPaths() {
-  const [yourPaths, setYourPaths] = useState([]);
+function YourPaths({yourPaths, setYourPaths}) {
+
 
   useEffect(() => {
     fetch("http://localhost:3000/paths")
