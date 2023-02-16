@@ -16,7 +16,7 @@ function CareerCaraousel({careers, careerId, setCareerId}) {
                 <div className="flex flex-wrap -m-3">
 
           {threeCareers.map((career)=>{
-            return <CarouselCard key={career.id} career={career} showsInfo={showsInfo}/>
+            return <CarouselCard key={career.id} career={career} showsInfo={showsInfo} careerId={careerId}/>
 
           })}              
               </div>
