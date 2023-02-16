@@ -3,7 +3,8 @@ import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
 import DataTable from "./DataTable"
 
-function CareerData() {
+function CareerData({careerId}) {
+  console.log(careerId)
   return (
     <div>
       <NavBarTwo />

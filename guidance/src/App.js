@@ -10,8 +10,11 @@ import ExploreCareers from "./components/ExploreCareers";
 import YourPaths from "./components/YourPaths";
 import CareerData from "./components/CareerData";
 import EditProfile from "./components/EditProfile";
+import CarouselCard from "./components/CarouselCard";
+import { useState } from "react";
 
 function App() {
+  const [careerId, setCareerId] = useState(0)
   return (
     <div className="bg-tarnsparent">
       <Routes>
@@ -20,10 +23,11 @@ function App() {
         <Route path="/signin" element={<SignIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/carousel" element={<CareerCaraousel />}></Route>
-        <Route path="/explore" element={<ExploreCareers />}></Route>
+        <Route path="/explore" element={<ExploreCareers careerId={careerId} setCareerId={setCareerId}/>}></Route>
         <Route path="/yourpaths" element={<YourPaths />}></Route>
-        <Route path="/careerdata" element={<CareerData />}></Route>
+        <Route path="/careerdata" element={<CareerData careerId={careerId}/>}></Route>
         <Route path="/editprofile" element={<EditProfile />}></Route>
+        <Route path="/card" element={<CarouselCard />}></Route>
       </Routes>
     </div>
   );
