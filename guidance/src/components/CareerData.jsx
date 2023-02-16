@@ -2,9 +2,14 @@ import React, {useState} from 'react'
 import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
 import DataTable from "./DataTable"
-
+import { useLocation } from "react-router-dom"
 
 function CareerData({careerId, yourPaths, setYourPaths}) {
+  console.log(careerId)
+  const career = useLocation()
+  const { from } = career.state?.from
+  //don't delete the below console log 
+  console.log(career.state?.from.id);
 
   const [amount, setAmount] = useState(0)
   const [term, setTerm] = useState(0)
