@@ -14,7 +14,7 @@ function CareerData({careerId}) {
                 
       
                 
-      <section className="mt-10 transition duration-200 bg-white rounded-md hover:bg-white hover:shadow-xl">
+      <section className="mt-10 transition duration-200 bg-white rounded-md hover:bg-white hover:shadow-2xl">
         <div className="flex flex-wrap items-center m-2 mb-5">
           <div className="w-full p-2 md:w-1/2">
             <div className="flex flex-wrap -m-2 ">
@@ -51,7 +51,7 @@ function CareerData({careerId}) {
       </section>
                 
       <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0 ">
-        <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-xl">
+        <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="pb-3 mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Education</h2>
       
       <p className="mb-4 text-base text-center">Minimum Education Required:  Bachelor's Degree</p>
@@ -77,7 +77,7 @@ function CareerData({careerId}) {
       
       <img className="content-center ml-auto mr-auto rounded-7xl" src="images/Screen-Shot-2023-02-14-at-11-42-36-AM.png" alt=""/>
       </div>
-        <div className="w-full px-4 mt-5 mb-4 transition rounded-lg duration-5 ration-200 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-xl">
+        <div className="w-full px-4 mt-5 mb-4 transition rounded-lg duration-5 ration-200 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Salary</h2>
       
       <p className="text-base text-center">How much do Music Teachers make?</p>
@@ -100,7 +100,7 @@ function CareerData({careerId}) {
         </div>
       </section>
       </div>
-        <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-xl">
+        <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="font-bold leading-tight tracking-tighter text-center tex4t-2xl mb- md:text-4xl text-darkgray-900">Loans</h2>
       
       <p className="mb-6 text-base text-center">We understand that loans can be a complex and daunting topic for many people. That’s why we’re here to help. Click here to learn more about loans and how we can assist you in navigating the borrowing process. </p>
@@ -120,7 +120,7 @@ function CareerData({careerId}) {
         <input className="w-full px-4 py-3 leading-tight text-gray-500 placeholder-gray-500 border border-gray-200 rounded-lg shadow-xs focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" type="number" name="field-name" placeholder="Enter Amount" id=""/>
       </div>
       </div>
-        <div className="w-full px-4 mt-5 mb-4 rounded-lg ration-200 mgtransition md:w-1/2 md:mb-0 hover:bg-white hover:shadow-xl">
+        <div className="w-full px-4 mt-5 mb-4 rounded-lg ration-200 mgtransition md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
       <h2 className="mb-4 text-2xl font-bold leading-tight tracking-tighter text-center md:text-4xl text-darkgray-900">Summary</h2>
       
       <p className="text-base text-center">Investing $100,000 and 4 years of education to become a Nurse Technician may seem like a significant commitment, but the potential long-term financial benefits are worth considering. Based on the average total salary of $30,000 per year, you can expect to break even on your investment within approximately 3.33 years.</p>
