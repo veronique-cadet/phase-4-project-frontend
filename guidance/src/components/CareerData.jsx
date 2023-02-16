@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
 import DataTable from "./DataTable"
@@ -10,10 +10,21 @@ function CareerData({careerId, yourPaths, setYourPaths}) {
   const { from } = career.state?.from
   //don't delete the below console log 
   console.log(career.state?.from.id);
+  const id = career.state?.from.id;
 
   const [amount, setAmount] = useState(0)
   const [term, setTerm] = useState(0)
   const [interest, setInterest] = useState(0)
+  const [currentCareer, setCurrentCareer] = useState({})
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/careers/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCurrentCareer(data)
+        console.log(data);
+      });
+  }, []);
 
   const handleSubmit = () => {
     fetch("http://localhost:3000/yourpaths", {
@@ -56,7 +67,9 @@ function CareerData({careerId, yourPaths, setYourPaths}) {
                 <img src="flex-ui-assets/images/dashboard/pages/flex-ui-green-circle.svg" alt=""/>
               </div>
               <div className="flex-1 ">
-                <h2 className="mb-2 text-3xl font-semibold text-black text-7xl">Music Teacher</h2>
+                <h2 className="mb-2 text-3xl font-semibold text-black text-7xl">
+                  {currentCareer.name}
+                  </h2>
                 <p className="pb-1 text-xl text-gray-500 pd-5">K-12 music teachers lead courses in general music education, choir, instruments, and more for students in Kindergarten through 6th grade.</p>
               </div>
             </div>
