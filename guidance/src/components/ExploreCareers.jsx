@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import CareerCaraousel from './CareerCaraousel'
 import NavBarTwo from './NavBarTwo';
+import Footer from './Footer';
 
 function ExploreCareers({careerId, setCareerId}) {
   const [careers, setCareers] = useState
@@ -48,15 +49,15 @@ useEffect(() => {
   return (
     <div>
 
-      {/* <NavBarTwo /> */}
+      <NavBarTwo />
 
-      <section className="bg-gray-50 py-4">
+      <section className="py-4 bg-gray-50">
 
         <div className="container px-4 mx-auto">
-          <h1 className="mb-4 text-2xl md:text-5xl leading-tight text-darkgray-900 font-bold tracking-tighter">
+          <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
             Hi, Future Student!{" "}
           </h1>
-          <div className="p-6 h-full border border-gray-100 overflow-hidden bg-white rounded-md shadow-dashboard">
+          <div className="h-full p-6 overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
 
             <div className="pb-6 border-b border-gray-100">
               <div className="flex flex-wrap items-center justify-between -m-2">
@@ -100,7 +101,7 @@ useEffect(() => {
                         {filteredData.slice(0, 15).map((value, key) => {
                           return (
                             <a
-                              className="w-full px-1 py-1 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input"
+                              className="w-full px-1 py-1 text-base font-normal text-gray-900 border border-gray-200 rounded-lg outline-none focus:border-green-500 shadow-input"
                               href={value.link}
                               target="_blank"
                             >
@@ -149,7 +150,7 @@ useEffect(() => {
             </div> */}
           </div>
 
-          <p className="mb-4 text-lg md:text-xl text-gray-500 font-medium py-10">
+          <p className="py-10 mb-4 text-lg font-medium text-gray-500 md:text-xl">
             Investing in education can be one of the biggest decisions you make
             in your life. With our website, you can calculate exactly how long
             it will take to recoup your investment based on your career path and
@@ -158,7 +159,7 @@ useEffect(() => {
             future.
           </p>
           <h3
-            className="mb-4 text-xl md:text-3xl leading-tight text-darkCoolGray-900 font-bold tracking-tighter"
+            className="mb-4 text-xl font-bold leading-tight tracking-tighter md:text-3xl text-darkCoolGray-900"
             // contentEditable="false"
           >
             Looking for inspo? Check out the options below:{" "}
@@ -166,6 +167,7 @@ useEffect(() => {
         </div>
       </section>
       <CareerCaraousel careers={careers} careerId={careerId} setCareerId={setCareerId}/>
+      <Footer />
     </div>
   );
 }
