@@ -1,6 +1,7 @@
 import React, { useState, useEffect }  from 'react'
 import CareerCaraousel from './CareerCaraousel'
 import NavBarTwo from './NavBarTwo';
+import Footer from './Footer';
 
 function ExploreCareers({careerId, setCareerId}) {
   const [careers, setCareers] = useState
@@ -166,6 +167,7 @@ useEffect(() => {
         </div>
       </section>
       <CareerCaraousel careers={careers} careerId={careerId} setCareerId={setCareerId}/>
+      <Footer />
     </div>
   );
 }
