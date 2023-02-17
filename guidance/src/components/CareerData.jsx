@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 import DataTable from "./DataTable";
 import { useLocation } from "react-router-dom";
 
-function CareerData({ careerId, yourPaths, setYourPaths }) {
+function CareerData({ careerId, yourPaths, setYourPaths, user }) {
   // console.log(careerId);
   const career = useLocation();
   const { from } = career.state?.from;
@@ -48,11 +48,11 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
   };
 
   const newPath = {
-    priority: null,
+    priority: 1,
     loan_amt: amount,
     interest_rate: interest,
     loan_term: term,
-    user_id: 1,
+    user_id: user.id,
     career_id: currentCareer.id,
   };
   if (!currentCareer.name) return null 
@@ -164,7 +164,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                   <div className="container px-4 mx-auto">
                     <div className="flex flex-wrap pb-5 -mx-4 text-center justify-evenly">
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">
+                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-4xl">
                           $
                           {
                             (currentCareer.avg_cost_edu /
@@ -179,7 +179,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                         </p>
                       </div>
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">
+                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-4xl">
                           {currentCareer.time_to_complete}y
                         </h2>
                         <p className="text-lg font-medium text-gray-500 md:text-xl">
@@ -187,7 +187,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                         </p>
                       </div>
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">
+                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-4xl">
                           $
                           {(currentCareer.avg_cost_edu)
                             .toFixed(0)
