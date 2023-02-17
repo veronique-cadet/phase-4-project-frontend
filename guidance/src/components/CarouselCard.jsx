@@ -9,7 +9,7 @@ function CarouselCard({ career, showsInfo, careerId }) {
 
   return (
     <div className="w-full p-3 md:w-1/3">
-      <div className="bg-white border rounded-md border-coolGray-100 shadow-dashboard">
+      <div className="transition duration-200 bg-white border rounded-md border-coolGray-100 shadow-dashboard hover:bg-white hover:shadow-2xl">
         <div className="flex flex-wrap items-center justify-center p-6 pb-4 -m-2 border-b border-coolGray-100">
           <div className="w-full p-2 lg:w-auto">
             <div className="flex flex-wrap items-center -m-2">
