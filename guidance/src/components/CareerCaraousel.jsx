@@ -10,9 +10,6 @@ function CareerCaraousel({careers, careerId, setCareerId}) {
   }
   const [threeCareers, setThreeCareers] = useState(careers.slice(0,3))
 
-  const random = careers[Math.floor(Math.random() * careers.length)]
-  console.log("look")
-  console.log(random)
   
   return (
     <div>
