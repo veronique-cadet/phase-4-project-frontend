@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import SignUp from "./SignUp";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
-function SignIn({user, setUser}) {
+function SignIn({user,setUser}) {
 
+  // const [user, setUser] = useState(null)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
@@ -20,7 +21,7 @@ function SignIn({user, setUser}) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data)
+        {setUser(data)}
         console.log(user)
       
       })

@@ -11,18 +11,18 @@ function ExploreCareers({ careerId, setCareerId, user }) {
   const [career, setCareer] = useState([]);
 
   const [search, setSearch] = useState("");
-  const [isUser, setIsUser] = useState(false);
+  // const [isUser, setIsUser] = useState(false);
   // const displayedCareers = careers.filter((career) =>
   //   career.name.toLowerCase().includes(search.toLowerCase())
   // );
-  const isThereAUser = () => {
-    if (user == null) {
-      setIsUser(false);
-    } else {
-      setIsUser(true);
-      console.log(user);
-    }
-  };
+  // const isThereAUser = () => {
+  //   if (user == null) {
+  //     setIsUser(false);
+  //   } else {
+  //     setIsUser(true);
+  //     console.log(user);
+  //   }
+  // };
 
   useEffect(() => {
     fetch("http://localhost:3000/careers")
@@ -59,9 +59,9 @@ function ExploreCareers({ careerId, setCareerId, user }) {
 
       <section className="py-4 bg-gray-50">
         <div className="container px-4 mx-auto">
-          {isUser ? (
+          {user ? (
             <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
-              Hello, {user.name}!
+              Hello, {user.first_name}!
             </h1>
           ) : (
             <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
