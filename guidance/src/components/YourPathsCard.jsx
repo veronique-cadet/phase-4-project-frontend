@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 
 function YourPathsCard({path}) {
+
+  const [priority, setPriority] = useState("Low")
   return (
     <section className="transition duration-200 rounded-md bg-gray-50"><div className="px-4">
   <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
@@ -34,11 +36,11 @@ function YourPathsCard({path}) {
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">43.5%</th>
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">$12,450.00</th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">14,652</th>
-        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars">
-  <option value="low">Low</option>
-  <option value="medium">Medium</option>
-  <option value="high">High</option>
-  <option value="very high">Very High</option>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars" value={priority} onChange={(e)=>setPriority(e.target.value)}>
+  <option value="Low">Low</option>
+  <option value="Medium">Medium</option>
+  <option value="High">High</option>
+  <option value="Very High">Very High</option>
 </select></th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><img src ="./garbage.png" className="object-contain h-10 ml-auto mr-auto w-7"/></th>
         </tr><tr className="border-b border-gray-100 h-18"><th className="px-4 py-2 text-left bg-white whitespace-nowrap">

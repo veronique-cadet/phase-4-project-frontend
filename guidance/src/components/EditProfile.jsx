@@ -62,7 +62,7 @@ function EditProfile() {
             </div>
             <div className="w-full p-3 md:flex-1">
               <input value={email} onChange={(e) => setEmail(e.target.value)}className="w-full px-4 py-2.5 text-base text-coolGray-900 font-normal outline-none focus:border-green-500 border border-coolGray-200 rounded-lg shadow-input" type="text" placeholder="johndoe@flex.co"/>
-            </div>t
+            </div>
           </div>
         </div>
       </div>
