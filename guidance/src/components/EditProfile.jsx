@@ -3,13 +3,13 @@ import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
 import { Link } from "react-router-dom";
 
-function EditProfile() {
+function EditProfile({user}) {
 
-  const [first, setFirst] = useState("Veronique")
-  const [last, setLast] = useState("Cadet")
-  const [email, setEmail] = useState("cadetvero@gmail.com")
-  const [password, setPassword] = useState("*************")
-
+  const [first, setFirst] = useState(user.first_name)
+  const [last, setLast] = useState(user.last_name)
+  const [email, setEmail] = useState(user.email)
+  const [password, setPassword] = useState("")
+console.log(user)
   
   return (
     <div>
