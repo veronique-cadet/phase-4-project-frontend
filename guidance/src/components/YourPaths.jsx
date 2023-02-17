@@ -14,9 +14,27 @@ function YourPaths({ yourPaths, setYourPaths, user }) {
       });
   }, []);
 
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/paths/${id}`, {
+      method: "DELETE"
+    })
+      // .then((response) => response.json())
+      // .then(() => {
+      //   const updatedPaths = yourPaths.filter(path => path.id !== id)
+     
+      // });
+      const updatedPaths = yourPaths.filter(path => path.id !== id)
+      setYourPaths(updatedPaths);
+  };
+  console.log(yourPaths)
+
   const filteredPaths = yourPaths.filter((path) => {
     if (user) return user.id === path.user.id;
     else return path;
+  
+
+
   });
 
   // const pathCard = filteredPaths.map((path) => {
@@ -39,6 +57,7 @@ function YourPaths({ yourPaths, setYourPaths, user }) {
           {filteredPaths.map((path) => {
             return (
               <YourPathsCard
+                handleDelete={handleDelete}
                 setYourPaths={setYourPaths}
                 path={path}
                 key={path.id}
