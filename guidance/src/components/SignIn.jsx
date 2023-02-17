@@ -43,23 +43,23 @@ function SignIn({user,setUser}) {
                   <img className="h-16" src="./booklogo.png" alt="" />
                 </Link>
               </a>
-              <h3 className="mb-4 text-2xl md:text-3xl font-bold">
+              <h3 className="mb-4 text-2xl font-bold md:text-3xl">
                 Sign in to your account
               </h3>
-              <p className="text-lg text-coolGray-500 font-medium">
+              <p className="text-lg font-medium text-coolGray-500">
                 Continue your journey here
               </p>
             </div>
             <form action="">
               <div className="mb-6">
                 <label
-                  className="block mb-2 text-coolGray-800 font-medium"
+                  className="block mb-2 font-medium text-coolGray-800"
                   htmlFor=""
                 >
                   Email
                 </label>
                 <input
-                  className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                  className="block w-full p-3 leading-5 border rounded-lg shadow-md appearance-none text-coolGray-900 border-coolGray-200 placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                   type="email"
                   placeholder="student@guidance.edu"
                   value={email}
@@ -68,13 +68,13 @@ function SignIn({user,setUser}) {
               </div>
               <div className="mb-4">
                 <label
-                  className="block mb-2 text-coolGray-800 font-medium"
+                  className="block mb-2 font-medium text-coolGray-800"
                   htmlFor=""
                 >
                   Password
                 </label>
                 <input
-                  className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                  className="block w-full p-3 leading-5 border rounded-lg shadow-md appearance-none text-coolGray-900 border-coolGray-200 placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                   type="password"
                   placeholder="************"
                   value={password}
@@ -85,20 +85,20 @@ function SignIn({user,setUser}) {
                 <div className="w-full md:w-1/2">
                   <label className="relative inline-flex items-center">
                     <input
-                      className="form-checkbox appearance-none"
+                      className="appearance-none form-checkbox"
                       type="checkbox"
                     />
                     <img
-                      className="absolute top-1/2 transform -translate-y-1/2 left-0"
+                      className="absolute left-0 transform -translate-y-1/2 top-1/2"
                       src="flex-ui-assets/elements/sign-up/checkbox-icon.svg"
                       alt=""
                     />
-                    <span className="ml-7 text-xs text-coolGray-800 font-medium">
+                    <span className="text-xs font-medium ml-7 text-coolGray-800">
                       Remember me
                     </span>
                   </label>
                 </div>
-                <div className="w-full md:w-auto mt-1">
+                <div className="w-full mt-1 md:w-auto">
                   <a
                     className="inline-block text-xs font-medium text-green-500 hover:text-green-600"
                     href="#"
@@ -109,7 +109,7 @@ function SignIn({user,setUser}) {
               </div>
 
               <button
-                className="inline-block py-3 px-7 mb-6 w-full text-base text-green-50 font-medium text-center leading-6 bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm"
+                className="inline-block w-full py-3 mb-6 text-base font-medium leading-6 text-center bg-green-500 rounded-md shadow-sm px-7 text-green-50 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 href="#"
                 onClick={signIn}
               >

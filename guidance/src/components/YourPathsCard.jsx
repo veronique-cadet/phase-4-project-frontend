@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 function YourPathsCard({yourPaths, path, setYourPaths, id}) {
 
-  const [priority, setPriority] = useState("Low")
+  const [priority, setPriority] = useState("1")
 
   const handleDelete = (id) => {
     fetch(`http://localhost:3000/paths/${id}`, {
@@ -16,6 +16,26 @@ function YourPathsCard({yourPaths, path, setYourPaths, id}) {
           })
         );
       });
+  };
+
+
+  const handlePriority = () => {
+    fetch("http://localhost:3000/yourpaths", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPriority),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setYourPaths(newPriority)
+        console.log("help");
+      });
+  };
+
+  const newPriority = {
+    priority: priority
   };
   return (
     <section className="transition duration-200 rounded-md bg-gray-50"><div className="px-4">
@@ -50,11 +70,16 @@ function YourPathsCard({yourPaths, path, setYourPaths, id}) {
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">43.5%</th>
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">$12,450.00</th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">14,652</th>
-        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars" value={priority} onChange={(e)=>setPriority(e.target.value)}>
-  <option value="Low">Low</option>
-  <option value="Medium">Medium</option>
-  <option value="High">High</option>
-  <option value="Very High">Very High</option>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars" value={priority} onChange={(e)=>{
+          e.preventDefault()
+          handlePriority()
+          setPriority(e.target.value)}}>
+        
+          
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option className="text-green-500" value="4">4</option>
 </select></th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">
           <img onClick={()=>  handleDelete(id)}
