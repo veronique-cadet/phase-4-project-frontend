@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 import DataTable from "./DataTable";
 import { useLocation } from "react-router-dom";
 
-function CareerData({ careerId, yourPaths, setYourPaths }) {
+function CareerData({ careerId, yourPaths, setYourPaths,user }) {
   // console.log(careerId);
   const career = useLocation();
   const { from } = career.state?.from;
@@ -48,11 +48,11 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
   };
 
   const newPath = {
-    priority: null,
+    priority: 1,
     loan_amt: amount,
     interest_rate: interest,
     loan_term: term,
-    user_id: 1,
+    user_id: user.id,
     career_id: currentCareer.id,
   };
   if (!currentCareer.name) return null 
