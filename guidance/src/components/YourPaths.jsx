@@ -6,7 +6,7 @@ import {useState, useEffect} from 'react'
 import Footer from "./Footer.jsx"
 
 
-function YourPaths({yourPaths, setYourPaths}) {
+function YourPaths({yourPaths, setYourPaths, user}) {
 
 
   useEffect(() => {
@@ -18,7 +18,10 @@ function YourPaths({yourPaths, setYourPaths}) {
       });
   }, []);
 
-  const pathCard = yourPaths.map((path) => {
+  const filteredPaths = yourPaths.filter((path) => {return user.id === path.user.id })
+  
+
+  const pathCard = filteredPaths.map((path) => {
     return <YourPathsCard setYourPaths={setYourPaths} path={path} key={path.id} id={path.id} yourPaths={yourPaths}/>;
   });
 
