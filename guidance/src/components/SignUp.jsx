@@ -33,7 +33,7 @@ const navigate = useNavigate()
         console.log(data)
       
       })
-      .then(navigate("/explore"))
+      .then(navigate("/signin"))
 
     }
 
@@ -56,23 +56,23 @@ const navigate = useNavigate()
                 />
                  </Link>
                 </a>
-                <h3 className="mb-4 text-2xl md:text-3xl font-bold">
+                <h3 className="mb-4 text-2xl font-bold md:text-3xl">
                   Create an Account
                 </h3>
-                <p className="text-lg text-coolGray-500 font-medium">
+                <p className="text-lg font-medium text-coolGray-500">
                   Start your journey with Guidance
                 </p>
               </div>
               <form action="">
                 <div className="mb-6">
                   <label
-                    className="block mb-2 text-coolGray-800 font-medium"
+                    className="block mb-2 font-medium text-coolGray-800"
                     htmlFor=""
                   >
                     First Name*
                   </label>
                   <input
-                    className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                    className="block w-full p-3 leading-5 border rounded-lg shadow-md appearance-none text-coolGray-900 border-coolGray-200 placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
                     placeholder="Hassan"
                     value = {firstName}
@@ -81,13 +81,13 @@ const navigate = useNavigate()
                 </div>
                 <div className="mb-6">
                   <label
-                    className="block mb-2 text-coolGray-800 font-medium"
+                    className="block mb-2 font-medium text-coolGray-800"
                     htmlFor=""
                   >
                     Last Name*
                   </label>
                   <input
-                    className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                    className="block w-full p-3 leading-5 border rounded-lg shadow-md appearance-none text-coolGray-900 border-coolGray-200 placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
                     placeholder="Razak"
                     value = {lastName}
@@ -96,13 +96,13 @@ const navigate = useNavigate()
                 </div>
                 <div className="mb-6">
                   <label
-                    className="block mb-2 text-coolGray-800 font-medium"
+                    className="block mb-2 font-medium text-coolGray-800"
                     htmlFor=""
                   >
                     Email*
                   </label>
                   <input
-                    className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                    className="block w-full p-3 leading-5 border rounded-lg shadow-md appearance-none text-coolGray-900 border-coolGray-200 placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="name"
                     placeholder="student@guidance.edu"
                     value = {signUpEmail}
@@ -111,13 +111,13 @@ const navigate = useNavigate()
                 </div>
                 <div className="mb-4">
                   <label
-                    className="block mb-2 text-coolGray-800 font-medium"
+                    className="block mb-2 font-medium text-coolGray-800"
                     htmlFor=""
                   >
                     Password*
                   </label>
                   <input
-                    className="appearance-none block w-full p-3 leading-5 text-coolGray-900 border border-coolGray-200 rounded-lg shadow-md placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                    className="block w-full p-3 leading-5 border rounded-lg shadow-md appearance-none text-coolGray-900 border-coolGray-200 placeholder-coolGray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     type="password"
                     placeholder="************"
                     value = {signUpPassword}
@@ -128,20 +128,20 @@ const navigate = useNavigate()
                   <div className="w-full md:w-1/2">
                     <label className="relative inline-flex items-center">
                       <input
-                        className="form-checkbox appearance-none"
+                        className="appearance-none form-checkbox"
                         type="checkbox"
                       />
                       <img
-                        className="absolute top-1/2 transform -translate-y-1/2 left-0"
+                        className="absolute left-0 transform -translate-y-1/2 top-1/2"
                         src="flex-ui-assets/elements/sign-up/checkbox-icon.svg"
                         alt=""
                       />
-                      <span className="ml-7 text-xs text-coolGray-800 font-medium">
+                      <span className="text-xs font-medium ml-7 text-coolGray-800">
                         Remember me
                       </span>
                     </label>
                   </div>
-                  <div className="w-full md:w-auto mt-1">
+                  <div className="w-full mt-1 md:w-auto">
                     <a
                       className="inline-block text-xs font-medium text-green-500 hover:text-green-600"
                       href="#"
@@ -151,14 +151,14 @@ const navigate = useNavigate()
                   </div>
                 </div>
                 <button
-                  className="inline-block py-3 px-7 mb-4 w-full text-base text-green-50 font-medium text-center leading-6 bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm"
+                  className="inline-block w-full py-3 mb-4 text-base font-medium leading-6 text-center bg-green-500 rounded-md shadow-sm px-7 text-green-50 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                   href="#"
                   onClick={handleSignUp}
                 >
                   Sign Up
                 </button>
                 <a
-                  className="inline-flex items-center justify-center py-3 px-7 mb-6 w-full text-base text-coolGray-500 font-medium text-center leading-6 bg-white border border-coolGray-100 hover:border-coolGray-200 rounded-md shadow-sm"
+                  className="inline-flex items-center justify-center w-full py-3 mb-6 text-base font-medium leading-6 text-center bg-white border rounded-md shadow-sm px-7 text-coolGray-500 border-coolGray-100 hover:border-coolGray-200"
                   href="#"
                 >
                   <img
@@ -184,7 +184,7 @@ const navigate = useNavigate()
           </div>
         </div>
         <img
-          className="md:absolute md:top-0 md:right-0 mx-auto md:h-full md:w-2/5 lg:w-1/2 md:object-cover"
+          className="mx-auto md:absolute md:top-0 md:right-0 md:h-full md:w-2/5 lg:w-1/2 md:object-cover"
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzIzMzB8MHwxfHNlYXJjaHw0NHx8c3R1ZGVudHxlbnwwfHx8fDE2NzYzODk1NTI&ixlib=rb-4.0.3&q=80&w=1920"
           alt=""
         />
