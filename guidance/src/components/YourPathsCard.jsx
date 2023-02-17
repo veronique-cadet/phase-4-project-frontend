@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 function YourPathsCard({yourPaths, path, setYourPaths, id}) {
 
-  const [priority, setPriority] = useState("1")
+  const [priority, setPriority] = useState(path.priority)
 
   const handleDelete = (id) => {
     fetch(`http://localhost:3000/paths/${id}`, {
