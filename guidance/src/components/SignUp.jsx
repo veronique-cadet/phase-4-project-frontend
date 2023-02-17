@@ -33,7 +33,7 @@ const navigate = useNavigate()
         console.log(data)
       
       })
-      .then(navigate("/signin"))
+      .then(navigate("/explore"))
 
     }
 

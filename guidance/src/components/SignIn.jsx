@@ -2,9 +2,8 @@ import React, {useState} from "react";
 import SignUp from "./SignUp";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
-function SignIn() {
+function SignIn({user, setUser}) {
 
-  const [user, setUser] = useState(null)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
