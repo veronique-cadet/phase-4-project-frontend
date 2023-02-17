@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useResolvedPath } from "react-router-dom";
 
 import './App.css';
 import SignIn from "./components/SignIn";
@@ -17,15 +17,17 @@ import DataTable from "./components/DataTable";
 function App() {
   const [careerId, setCareerId] = useState(0)
   const [yourPaths, setYourPaths] = useState([]);
+    const [user, setUser] = useState(null);
+
   return (
     <div className="bg-tarnsparent">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/signin" element={<SignIn user={user} setUser={setUser}/>}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/carousel" element={<CareerCaraousel />}></Route>
-        <Route path="/explore" element={<ExploreCareers careerId={careerId} setCareerId={setCareerId}/>}></Route>
+        <Route path="/explore" element={<ExploreCareers careerId={careerId} setCareerId={setCareerId} user={user}/>}></Route>
         <Route path="/yourpaths" element={<YourPaths yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
         <Route path="/careerdata" element={<CareerData careerId={careerId} yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
         <Route path="/editprofile" element={<EditProfile />}></Route>

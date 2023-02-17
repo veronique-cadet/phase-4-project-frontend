@@ -1,36 +1,46 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import CareerCaraousel from "./CareerCaraousel";
 import NavBarTwo from "./NavBarTwo";
 import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
-function ExploreCareers({ careerId, setCareerId }) {
+function ExploreCareers({ careerId, setCareerId, user }) {
   const [careers, setCareers] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
+  const [career, setCareer] = useState([]);
 
   const [search, setSearch] = useState("");
+  const [isUser, setIsUser] = useState(false);
   // const displayedCareers = careers.filter((career) =>
   //   career.name.toLowerCase().includes(search.toLowerCase())
   // );
+  const isThereAUser = () => {
+    if (user == null) {
+      setIsUser(false);
+    } else {
+      setIsUser(true);
+      console.log(user);
+    }
+  };
 
   useEffect(() => {
     fetch("http://localhost:3000/careers")
       .then((res) => res.json())
       .then((data) => {
         setCareers(data);
-        console.log(careers);
+        // console.log(careers);
       });
   }, []);
   if (!careers[0]) return null;
-  console.log(careers);
-  // console.log(search)
-
+  // console.log(careers);
+  console.log(user);
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = careers.filter((value) => {
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
-      console.log(value.name);
+      // console.log(value.name);
     });
     if (searchWord === "") {
       setFilteredData([]);
@@ -49,9 +59,15 @@ function ExploreCareers({ careerId, setCareerId }) {
 
       <section className="py-4 bg-gray-50">
         <div className="container px-4 mx-auto">
-          <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
-            Hi, Future Student!{" "}
-          </h1>
+          {isUser ? (
+            <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
+              Hello, {user.name}!
+            </h1>
+          ) : (
+            <h1 className="mb-4 text-2xl font-bold leading-tight tracking-tighter md:text-5xl text-darkgray-900">
+              Hello, Future Student!
+            </h1>
+          )}
           <div className="h-full p-6 overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
             <div className="pb-6 border-b border-gray-100">
               <div className="flex flex-wrap items-center justify-between -m-2">
@@ -63,11 +79,13 @@ function ExploreCareers({ careerId, setCareerId }) {
                 <div className="w-full p-2 md:w-auto">
                   <div className="flex flex-wrap justify-between -m-1.5">
                     <div className="w-full md:w-auto p-1.5"></div>
-                    <div className="w-full md:w-auto p-1.5">
-                      <button className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button">
-                        <p>Search</p>
-                      </button>
-                    </div>
+                    {/* <div className="w-full md:w-auto p-1.5">
+                      <Link to="/careerdata" state={{ from: career }}>
+                        <button className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button">
+                          <p>Search</p>
+                        </button>
+                      </Link>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -98,8 +116,11 @@ function ExploreCareers({ careerId, setCareerId }) {
                               className="w-1/2 px-1 py-1 text-base font-normal text-green-900 borderrounded-lg outline-none focus:border-green-500 shadow-input break-after-all"
                               href={value.link}
                               target="_blank"
-                              onClick={()=>{setWordEntered(value.name)}}
-
+                              onClick={() => {
+                                setWordEntered(value.name);
+                                setCareer(value)
+                                console.log(value)
+                              }}
                             >
                               <p>{value.name} </p>
                             </a>
@@ -108,12 +129,19 @@ function ExploreCareers({ careerId, setCareerId }) {
                       </div>
                     )}
                   </div>
+
+                  <div className="w-full md:w-auto p-1.5">
+                    <Link to="/careerdata" state={{ from: career }}>
+                      <button className="flex flex-wrap justify-center w-full px-6 py-4 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button">
+                        <p>Search</p>
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <p className="py-10 mb-4 text-lg font-medium text-green-800 md:text-xl">
+          <p className="py-10 mb-4 text-lg font-medium text-gray-600 md:text-xl">
             Investing in education can be one of the biggest decisions you make
             in your life. With our website, you can calculate exactly how long
             it will take to recoup your investment based on your career path and
