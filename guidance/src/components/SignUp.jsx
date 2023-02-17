@@ -15,7 +15,7 @@ const navigate = useNavigate()
     e.preventDefault()
     console.log("clicked")
 
-    fetch(`http://localhost:3000/signup`, {
+    fetch(`/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

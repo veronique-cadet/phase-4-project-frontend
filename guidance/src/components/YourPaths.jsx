@@ -6,7 +6,7 @@ import Footer from "./Footer.jsx";
 
 function YourPaths({ yourPaths, setYourPaths, user }) {
   useEffect(() => {
-    fetch("http://localhost:3000/paths")
+    fetch("/paths")
       .then((response) => response.json())
       .then((data) => {
         setYourPaths(data);
@@ -16,7 +16,7 @@ function YourPaths({ yourPaths, setYourPaths, user }) {
 
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/paths/${id}`, {
+    fetch(`/paths/${id}`, {
       method: "DELETE"
     })
       // .then((response) => response.json())

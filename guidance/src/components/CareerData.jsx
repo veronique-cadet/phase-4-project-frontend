@@ -20,7 +20,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
   // const [currentCareer, setCurrentCareer] = useState({});
   
   useEffect(() => {
-    fetch(`http://localhost:3000/careers/${id}`)
+    fetch(`/careers/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCurrentCareer(data);
@@ -33,7 +33,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
     const handleSubmit = () => {
     console.log(yourPaths)
     console.log(newPath)
-    fetch("http://localhost:3000/paths", {
+    fetch("/paths", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
