@@ -12,7 +12,7 @@ function SignIn({user,setUser}) {
   const signIn =(e)=>{
     e.preventDefault()
 
-    fetch(`http://localhost:3000/login`, {
+    fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,12 +21,10 @@ function SignIn({user,setUser}) {
     })
       .then((res) => res.json())
       .then((data) => {
-        {setUser(data)}
+        setUser(data)
         console.log(user)
-      
+        navigate("/explore");
       })
-      .then(navigate('/explore'))
-
     }
 // console.log(user)
   return (

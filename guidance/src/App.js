@@ -11,7 +11,7 @@ import YourPaths from "./components/YourPaths";
 import CareerData from "./components/CareerData";
 import EditProfile from "./components/EditProfile";
 import CarouselCard from "./components/CarouselCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DataTable from "./components/DataTable";
 
 function App() {
@@ -19,6 +19,19 @@ function App() {
   const [yourPaths, setYourPaths] = useState([]);
   const [user, setUser] = useState(null);
 
+
+   useEffect(() => {
+     // auto-login
+     const getUser = async () => {
+       let req = await fetch("/me");
+       let res = await req.json()
+       console.log('res', res)
+       setUser(res)
+      }
+      getUser()
+   }, []);
+
+    //  if (!user) return <Home onLogin={setUser} />;
 
 
   return (

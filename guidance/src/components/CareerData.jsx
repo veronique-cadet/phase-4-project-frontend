@@ -56,6 +56,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
     career_id: currentCareer.id,
   };
   if (!currentCareer.name) return null 
+  if (!career.state?.from.id) return null; 
   // console.log(currentCareer)
 
   return (
