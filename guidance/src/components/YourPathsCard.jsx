@@ -10,11 +10,16 @@ function YourPathsCard({yourPaths, path, setYourPaths, id, handleDelete}) {
   //   }))
 
   
+ 
 
+  const handlePriority = (newPriorityValue) => {
+    const newPriority = {
+      "priority": newPriorityValue
+    };
 
-  const handlePriority = () => {
-    fetch("http://localhost:3000/yourpaths", {
-      method: "POST",
+    console.log(newPriorityValue)
+    fetch(`http://localhost:3000/paths/${id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
@@ -22,14 +27,11 @@ function YourPathsCard({yourPaths, path, setYourPaths, id, handleDelete}) {
     })
       .then((response) => response.json())
       .then(() => {
-        setYourPaths(newPriority)
+        setPriority(newPriorityValue)
         console.log("help");
       });
   };
 
-  const newPriority = {
-    priority: priority
-  };
 
 const loanTotal = (path.loan_amt * path.interest_rate) * path.loan_term
 const totalEdu = loanTotal + path.career.avg_cost_edu
@@ -74,7 +76,7 @@ const breakEven = parseFloat(totalEdu / path.career.ave_salary)
         <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">${totalEdu.toFixed(0)
                     .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">{breakEven.toFixed(2)} years</th>
-        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars" value={priority} onChange={(e)=>setPriority(e.target.value)}>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars" value={priority} onChange={(e)=>handlePriority(e.target.value)} >
         
           
   <option value="1">1</option>
