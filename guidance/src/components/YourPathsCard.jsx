@@ -1,8 +1,22 @@
 import React, {useState} from 'react'
 
-function YourPathsCard({path}) {
+function YourPathsCard({yourPaths, path, setYourPaths, id}) {
 
   const [priority, setPriority] = useState("Low")
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/paths/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setYourPaths(
+          yourPaths.filter((path) => {
+            return path.id !== id;
+          })
+        );
+      });
+  };
   return (
     <section className="transition duration-200 rounded-md bg-gray-50"><div className="px-4">
   <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
@@ -42,7 +56,9 @@ function YourPathsCard({path}) {
   <option value="High">High</option>
   <option value="Very High">Very High</option>
 </select></th>
-        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><img src ="./garbage.png" className="object-contain h-10 ml-auto mr-auto w-7"/></th>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">
+          <img onClick={()=>  handleDelete(id)}
+        src ="./garbage.png" className="object-contain h-10 ml-auto mr-auto w-7"/></th>
         </tr><tr className="border-b border-gray-100 h-18"><th className="px-4 py-2 text-left bg-white whitespace-nowrap">
 
         </th></tr>
