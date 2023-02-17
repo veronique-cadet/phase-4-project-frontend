@@ -19,7 +19,7 @@ function YourPaths({yourPaths, setYourPaths}) {
   }, []);
 
   const pathCard = yourPaths.map((path) => {
-    return <YourPathsCard path={path} key={path.id} />;
+    return <YourPathsCard setYourPaths={setYourPaths} path={path} key={path.id} id={path.id} yourPaths={yourPaths}/>;
   });
 
   return (

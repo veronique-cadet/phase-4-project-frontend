@@ -17,7 +17,9 @@ import DataTable from "./components/DataTable";
 function App() {
   const [careerId, setCareerId] = useState(0)
   const [yourPaths, setYourPaths] = useState([]);
-    const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
+
+
 
   return (
     <div className="bg-tarnsparent">
