@@ -5,7 +5,7 @@ import DataTable from "./DataTable";
 import { useLocation } from "react-router-dom";
 
 function CareerData({ careerId, yourPaths, setYourPaths }) {
-  console.log(careerId);
+  // console.log(careerId);
   const career = useLocation();
   const { from } = career.state?.from;
   //don't delete the below console log
@@ -16,16 +16,19 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
   const [term, setTerm] = useState(0);
   const [interest, setInterest] = useState(0);
   const [currentCareer, setCurrentCareer] = useState({});
-
+  // const [currentCareer, setCurrentCareer] = useState({});
+  
   useEffect(() => {
     fetch(`http://localhost:3000/careers/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCurrentCareer(data);
         console.log(data);
+        console.log("???");
+        console.log(currentCareer);
       });
-  }, []);
-
+    }, []);
+    
   const handleSubmit = () => {
     fetch("http://localhost:3000/yourpaths", {
       method: "POST",
@@ -48,6 +51,8 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
     user_id: 1,
     career_id: 2,
   };
+  if (!currentCareer.name) return null 
+  console.log(currentCareer)
 
   return (
     <div>
@@ -134,12 +139,13 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">
                           $
-                          {(
-                            currentCareer.avg_cost_edu /
-                            currentCareer.time_to_complete
-                          )
+                          {
+                            (currentCareer.avg_cost_edu /
+                            currentCareer.time_to_complete)
+                          
                             .toFixed(0)
-                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+                            }
                         </h2>
                         <p className="text-lg font-medium text-gray-500 md:text-xl">
                           Average Tuition Per Year
@@ -156,7 +162,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">
                           $
-                          {currentCareer.avg_cost_edu
+                          {(currentCareer.avg_cost_edu)
                             .toFixed(0)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         </h2>
@@ -214,7 +220,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                   Loans
                 </h2>
 
-                <p className="mb-6 text-base text-center px-8 pt-4">
+                <p className="mb-6 text-base text-center px-8">
                   We understand that loans can be a complex and daunting topic
                   for many people. That’s why we’re here to help. Click here to
                   learn more about loans and how we can assist you in navigating
@@ -291,9 +297,11 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                     .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
                   per year, you can expect to break even on your investment
                   within approximately{" "}
-                  {(
+                  {
+                  (
                     currentCareer.avg_cost_edu / currentCareer.ave_salary
-                  ).toFixed(2)}{" "}
+                  ).toFixed(2)
+                  }{" "}
                   years.
                 </p>
 
@@ -332,11 +340,11 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">
                           {
-                            (
+                            
                               currentCareer.avg_cost_edu /
                               currentCareer.ave_salary
-                            ).toFixed(2)
-                            // .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+                            .toFixed(2)
+                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
                           }
                           y
                         </h2>
