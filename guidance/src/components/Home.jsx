@@ -13,16 +13,16 @@ function Home() {
   <NavBar/>
   <div className="py-20 md:py-28">
     <div className="container px-4 mx-auto">
-      <div className="flex flex-wrap xl:items-center -mx-4">
-        <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0">
-          <h1 className="mb-6 text-3xl md:text-5xl lg:text-6xl leading-tight font-bold tracking-tight">Unlock the Full Potential of Your Education</h1>
-          <p className="mb-8 text-lg md:text-xl text-gray-500 font-medium">See how long your education investment will take to pay off and plan for a securce financial path.</p>
+      <div className="flex flex-wrap -mx-4 xl:items-center">
+        <div className="w-full px-4 mb-16 md:w-1/2 md:mb-0">
+          <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">Unlock the Full Potential of Your Education</h1>
+          <p className="mb-8 text-lg font-medium text-gray-500 md:text-xl">See how long your education investment will take to pay off and plan for a secure financial path.</p>
           <div className="flex flex-wrap">
-            <div className="w-full md:w-auto py-1 md:py-0 md:mr-4"><a className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 border border-green-500 rounded-md shadow-sm" href="#"><Link to="/signup"> Sign up For Free</Link></a></div>
-            <div className="w-full md:w-auto py-1 md:py-0"><a className="inline-block py-5 px-7 w-full text-base md:text-lg leading-4 text-coolGray-800 font-medium text-center bg-white hover:bg-gray-100 focus:ring-2 focus:ring-coolGray-200 focus:ring-opacity-50 border border-gray-200 rounded-md shadow-sm" href="#"><Link to="/signin"> Log In</Link></a></div>
+            <div className="w-full py-1 md:w-auto md:py-0 md:mr-4"><a className="inline-block w-full py-5 text-base font-medium leading-4 text-center bg-green-500 border border-green-500 rounded-md shadow-sm px-7 md:text-lg text-green-50 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" href="#"><Link to="/signup"> Sign up For Free</Link></a></div>
+            <div className="w-full py-1 md:w-auto md:py-0"><a className="inline-block w-full py-5 text-base font-medium leading-4 text-center bg-white border border-gray-200 rounded-md shadow-sm px-7 md:text-lg text-coolGray-800 hover:bg-gray-100 focus:ring-2 focus:ring-coolGray-200 focus:ring-opacity-50" href="#"><Link to="/signin"> Log In</Link></a></div>
           </div>
         </div>
-        <div className="w-full md:w-1/2 px-4">
+        <div className="w-full px-4 md:w-1/2">
           <div className="relative mx-auto md:mr-0 max-w-max">
                           <Link to="/explore">
 
