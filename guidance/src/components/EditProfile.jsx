@@ -11,6 +11,23 @@ function EditProfile({user}) {
   const [password, setPassword] = useState("")
 console.log(user)
   
+fetch(`http://localhost:3000/users/${user}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        first_name: first,
+        last_name: last,
+        email: email,
+        password: password,
+      
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json))
+  
+
   return (
     <div>
       <NavBarTwo />
