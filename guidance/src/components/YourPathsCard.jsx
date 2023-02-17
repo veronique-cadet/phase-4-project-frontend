@@ -30,6 +30,12 @@ function YourPathsCard({yourPaths, path, setYourPaths, id, handleDelete}) {
   const newPriority = {
     priority: priority
   };
+
+const loanTotal = (path.loan_amt * path.interest_rate) * path.loan_term
+const totalEdu = loanTotal + path.career.avg_cost_edu
+const breakEven = parseFloat(totalEdu / path.career.ave_salary)
+
+  
   return (
     <section className="transition duration-200 rounded-md bg-gray-50"><div className="px-4">
   <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
@@ -58,12 +64,16 @@ function YourPathsCard({yourPaths, path, setYourPaths, id, handleDelete}) {
           </div>
         </div>
         </th>
-        <th className="px-4 text-lg text-center text-green-500 whitespace-nowrap md:text-xl">${path.career.avg_cost_edu}</th>
+        <th className="px-4 text-lg text-center text-green-500 whitespace-nowrap md:text-xl">${path.career.avg_cost_edu.toFixed(0)
+                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</th>
         <th className="px-4 text-lg text-center text-gray-800 whitespace-nowrap md:text-xl">{path.career.time_to_complete}&nbsp;years</th>
-        <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">${path.career.ave_salary}</th>
-        <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">43.5%</th>
-        <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">$12,450.00</th>
-        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">14,652</th>
+        <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">${path.career.ave_salary.toFixed(0)
+                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</th>
+        <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">${loanTotal.toFixed(0)
+                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</th>
+        <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">${totalEdu.toFixed(0)
+                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</th>
+        <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">{breakEven.toFixed(2)} years</th>
         <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl"><select name="cars" id="cars" value={priority} onChange={(e)=>setPriority(e.target.value)}>
         
           
