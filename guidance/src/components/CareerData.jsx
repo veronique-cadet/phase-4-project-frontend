@@ -23,14 +23,16 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
       .then((res) => res.json())
       .then((data) => {
         setCurrentCareer(data);
-        console.log(data);
-        console.log("???");
-        console.log(currentCareer);
+        // console.log(data);
+        // console.log("???");
+        // console.log(currentCareer);
       });
     }, []);
     
-  const handleSubmit = () => {
-    fetch("http://localhost:3000/yourpaths", {
+    const handleSubmit = () => {
+    console.log(yourPaths)
+    console.log(newPath)
+    fetch("http://localhost:3000/paths", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,6 +42,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
       .then((response) => response.json())
       .then(() => {
         setYourPaths([...yourPaths, newPath]);
+        console.log(yourPaths)
       });
   };
 
@@ -49,10 +52,10 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
     interest_rate: interest,
     loan_term: term,
     user_id: 1,
-    career_id: 2,
+    career_id: currentCareer.id,
   };
   if (!currentCareer.name) return null 
-  console.log(currentCareer)
+  // console.log(currentCareer)
 
   return (
     <div>
@@ -90,7 +93,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                     </div>
                     <div className="w-full p-2 md:w-auto">
                       <button
-                        onClick={(e) => {
+                        onClick={() => {
                           handleSubmit();
                         }}
                         className="flex flex-wrap items-center justify-center w-full px-4 py-3 text-base font-medium text-white bg-green-500 rounded-md hover:bg-green-600 shadow-button"
@@ -316,7 +319,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                   <div className="container px-4 mx-auto">
                     <div className="flex flex-wrap justify-center pt-10 text-center -mx10-4">
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-4xl">
+                        <h2 className="mb-2 text-5xl font-bold tracking-tighter text-green-500 md:text-4xl">
                           $
                           {currentCareer.avg_cost_edu
                             .toFixed(0)
@@ -327,7 +330,7 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                         </p>
                       </div>
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-5xl">
+                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-4xl">
                           $
                           {currentCareer.ave_salary
                             .toFixed(0)
@@ -341,8 +344,8 @@ function CareerData({ careerId, yourPaths, setYourPaths }) {
                         <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-5xl">
                           {
                             
-                              currentCareer.avg_cost_edu /
-                              currentCareer.ave_salary
+                              (currentCareer.avg_cost_edu /
+                              currentCareer.ave_salary)
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
                           }
