@@ -40,7 +40,7 @@ class DataTable extends Component {
       series: [
         {
           name: "series-1",
-          data: [50000, 70000, 90000, 100000, 130000
+          data: [currentCareer?.salary_1, currentCareer?.salary_2, currentCareer?.ave_salary, currentCareer?.salary_3, currentCareer?.salary_4
           ]
           // data: [currentCareer.salary_1,currentCareer.salary_2, currentCareer.ave_salary,currentCareer.salary_3, currentCareer.salary_4
           // ]
