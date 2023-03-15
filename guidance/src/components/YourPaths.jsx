@@ -33,6 +33,7 @@ function YourPaths({ yourPaths, setYourPaths, user }) {
     if (user) return user.id === path.user.id;
     else return path;
   
+    
 
 
   });
