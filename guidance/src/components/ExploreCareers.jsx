@@ -25,7 +25,7 @@ function ExploreCareers({ careerId, setCareerId, user }) {
   // };
 
   useEffect(() => {
-    fetch("http://localhost:3000/careers")
+    fetch("/careers")
       .then((res) => res.json())
       .then((data) => {
         setCareers(data);
