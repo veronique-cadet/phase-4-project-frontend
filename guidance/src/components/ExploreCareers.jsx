@@ -9,38 +9,25 @@ function ExploreCareers({ careerId, setCareerId, user }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const [career, setCareer] = useState([]);
-
   const [search, setSearch] = useState("");
-  // const [isUser, setIsUser] = useState(false);
-  // const displayedCareers = careers.filter((career) =>
-  //   career.name.toLowerCase().includes(search.toLowerCase())
-  // );
-  // const isThereAUser = () => {
-  //   if (user == null) {
-  //     setIsUser(false);
-  //   } else {
-  //     setIsUser(true);
-  //     console.log(user);
-  //   }
-  // };
+  const [itemClicked, setItemClicked] = useState(false);
 
   useEffect(() => {
     fetch("/careers")
       .then((res) => res.json())
       .then((data) => {
         setCareers(data);
-        // console.log(careers);
       });
   }, []);
   if (!careers[0]) return null;
-  // console.log(careers);
-  console.log(user);
+
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
+    setItemClicked(false);
+
     const newFilter = careers.filter((value) => {
       return value.name.toLowerCase().includes(searchWord.toLowerCase());
-      // console.log(value.name);
     });
     if (searchWord === "") {
       setFilteredData([]);
@@ -56,7 +43,6 @@ function ExploreCareers({ careerId, setCareerId, user }) {
   return (
     <div>
       <NavBarTwo />
-
       <section className="py-4 bg-gray-50">
         <div className="container px-4 mx-auto">
           {user ? (
@@ -79,18 +65,10 @@ function ExploreCareers({ careerId, setCareerId, user }) {
                 <div className="w-full p-2 md:w-auto">
                   <div className="flex flex-wrap justify-between -m-1.5">
                     <div className="w-full md:w-auto p-1.5"></div>
-                    {/* <div className="w-full md:w-auto p-1.5">
-                      <Link to="/careerdata" state={{ from: career }}>
-                        <button className="flex flex-wrap justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-500 border border-green-500 rounded-md hover:bg-green-600 shadow-button">
-                          <p>Search</p>
-                        </button>
-                      </Link>
-                    </div> */}
                   </div>
                 </div>
               </div>
             </div>
-
             <div className="py-6 border-b border-gray-100">
               <div className="w-full md:w-9/12">
                 <div className="flex flex-wrap -m-3">
@@ -105,10 +83,9 @@ function ExploreCareers({ careerId, setCareerId, user }) {
                       type="text"
                       placeholder="Frontend Developer"
                       value={wordEntered}
-                      // onChange={(e) => setSearch(e.target.value)}
                       onChange={handleFilter}
                     />
-                    {filteredData.length != 0 && (
+                    {filteredData.length != 0 && !itemClicked && (
                       <div className="w-full px-4 py-2.5 text-base text-gray-900 font-normal outline-none focus:border-green-500 border border-gray-200 rounded-lg shadow-input">
                         {filteredData.slice(0, 15).map((value, key) => {
                           return (
@@ -118,8 +95,8 @@ function ExploreCareers({ careerId, setCareerId, user }) {
                               target="_blank"
                               onClick={() => {
                                 setWordEntered(value.name);
-                                setCareer(value)
-                                console.log(value)
+                                setCareer(value);
+                                setItemClicked(true);
                               }}
                             >
                               <p>{value.name} </p>
