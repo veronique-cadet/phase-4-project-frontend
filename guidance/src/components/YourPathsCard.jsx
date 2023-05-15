@@ -7,6 +7,17 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
   //   yourPaths.filter((path) => {
   //     return path.id !== id;
   //   }))
+const refresh = () =>{
+    fetch("/paths")
+      .then((response) => response.json())
+      .then((data) => {
+        setYourPaths(data);
+        console.log(data);
+      });
+ 
+
+}
+
 
   const handlePriority = (newPriorityValue) => {
     const newPriority = {
@@ -25,6 +36,7 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
       .then(() => {
         setPriority(newPriorityValue);
         console.log("help");
+        refresh()
       });
   };
 
