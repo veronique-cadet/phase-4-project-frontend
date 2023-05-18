@@ -8,9 +8,12 @@ function NavBarTwo() {
     <nav className="flex justify-between p-6 px-4">
       <div className="flex items-center justify-between w-full">
         <div className="xl:w-1/3">
+          <Link to="/explore">
+
           <a className="block max-w-max" href="#">
    <img className="h-14" src="./logo.png" alt="logo"/>
           </a>
+          </Link>
         </div>
         <div className="hidden xl:block xl:w-1/3">
           <ul className="flex justify-center">
