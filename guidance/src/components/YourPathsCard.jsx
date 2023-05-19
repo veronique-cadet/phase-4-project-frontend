@@ -1,28 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
   const [priority, setPriority] = useState(path.priority);
+  const [bgColor, setBgColor] = useState(""); 
 
-  // const newArray =  setYourPaths(
-  //   yourPaths.filter((path) => {
-  //     return path.id !== id;
-  //   }))
-const refresh = () =>{
+  useEffect(() => {
+    setBgColor(getBgColor(priority));
+  }, [priority]);
+
+ 
+  const refresh = () => {
     fetch("/paths")
       .then((response) => response.json())
       .then((data) => {
         setYourPaths(data);
         console.log(data);
       });
- 
-
-}
+  };
 
 
   const handlePriority = (newPriorityValue) => {
     const newPriority = {
       priority: newPriorityValue,
     };
+
 
     console.log(newPriorityValue);
     fetch(`/paths/${id}`, {
@@ -36,13 +37,30 @@ const refresh = () =>{
       .then(() => {
         setPriority(newPriorityValue);
         console.log("help");
-        refresh()
+        refresh();
       });
   };
 
   const loanTotal = path.loan_amt * path.interest_rate * path.loan_term;
   const totalEdu = loanTotal + path.career.avg_cost_edu;
   const breakEven = parseFloat(totalEdu / path.career.ave_salary);
+
+  const getBgColor = (priorityValue) => {
+    let color;
+    if (priorityValue === 1) {
+      color = "bg-green-400";
+    } else if (priorityValue === 2) {
+      color = "bg-yellow-400";
+    } else if (priorityValue === 3) {
+      color = "bg-orange-400";
+    } else if (priorityValue === 4) {
+      color = "bg-red-400";
+    } else {
+      color = "bg-gray-400";
+    }
+    return color;
+  };
+
 
   return (
     <section className="transition duration-200 rounded-md bg-gray-50">
@@ -51,7 +69,9 @@ const refresh = () =>{
           <div className="">
             <table className="w-full transition duration-200 rounded-md">
               <tbody>
-                <tr className="bg-gray-400 whitespace-nowrap h-11 bg-opacity-80">
+                <tr
+                  className={`${bgColor} whitespace-nowrap h-11 bg-opacity-80`}
+                >
                   <th className="pl-5 text-lg font-medium text-left text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     <p>CAREER&nbsp;</p>
                   </th>
@@ -130,14 +150,18 @@ const refresh = () =>{
                       name="cars"
                       id="cars"
                       value={priority}
-                      onChange={(e) => handlePriority(e.target.value)}
+                      onChange={(e) => {
+                        const newPriorityValue = parseInt(e.target.value);
+                        const newBgColor = getBgColor(newPriorityValue);
+                        setPriority(newPriorityValue);
+                        setBgColor(newBgColor);
+                        handlePriority(newPriorityValue);
+                      }}
                     >
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
-                      <option className="text-green-500" value="4">
-                        4
-                      </option>
+                      <option value="4"> 4 </option>
                     </select>
                   </th>
                   <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">
