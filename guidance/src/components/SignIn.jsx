@@ -121,7 +121,7 @@ function SignIn({user,setUser}) {
                   className="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline"
                   href="#"
                 >
-                  <Link to="/SignUp"> Sign Up</Link>
+                  <Link to="/SignUp">&nbsp;Sign Up</Link>
                 </a>
               </p>
             </form>

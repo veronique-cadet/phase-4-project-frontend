@@ -176,7 +176,7 @@ const navigate = useNavigate()
                     className="inline-block text-xs font-medium text-green-500 hover:text-green-600 hover:underline"
                     href="#"
                   > 
-                    <Link to="/SignIn"> Log In</Link>
+                    <Link to="/SignIn">&nbsp;Log In</Link>
                   </a>
                 </p>
               </form>
