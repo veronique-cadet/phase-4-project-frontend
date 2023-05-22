@@ -62,86 +62,87 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
     <section className="transition duration-200 rounded-md bg-gray-50">
       <div className="bg-white">
         <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
-          <div className="">
-            <table className="w-full transition duration-200 rounded-md border-none">
-              <tbody>
+          <div className="overflow-x-scroll md:overflow-x-auto">
+            <table className="w-full transition duration-200 rounded-md border-none ">
+              <tbody className="">
                 <tr
                   className={`${bgColor} whitespace-nowrap h-11 bg-opacity-80 `}
                 >
-                  <th className="pl-5 text-lg font-medium text-left text-white uppercase whitespace-nowrap md:text-xl -500 ">
-                    <p>CAREER&nbsp;</p>
+                  <th className="pl-3 text-xs sm:text-sm font-medium text-left text-white uppercase whitespace-nowrap w-0">
+                    CAREER
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     AVG COST OF&nbsp; TUITION
                   </th>
-                  <th className="text-lg font-medium text-white uppercase whitespace-nowrap md:text-xl -500 text-cente ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     TIME TO COMPLETE
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     AVG SALARY
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     LOAN INTEREST
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     EST TOTAL COST OF EDUCATION
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     BREAK EVEN
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     PRIORITY
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
                     Remove
                   </th>
                 </tr>
                 <tr className="border-b border-gray-100 h-18">
-                  <th className="px-4 py-2 text-left bg-white whitespace-nowrap">
+                  <th className="py-2 text-left bg-white max-w-0 pr-32">
+                    
                     <div className="flex items-center w-48 break-words">
-                      <div className="w-auto p-2">
-                        <div className="flex items-center justify-center w-10 h-10 text-base font-medium bg-green-500 rounded-md">
-                          <img src="./career.png" />
+                      <div className="w-auto p-1 sm:p-2">
+                        <div className="flex items-center justify-center w-6 sm:w-8 h-6 sm:h-8 text-xs sm:text-base font-medium rounded-md">
+                          <img src="./career.png" alt="Career" />
                         </div>
                       </div>
                       <div className="p-2 w-35">
-                        <p className="text-gray-800 break-words text-l10g md:text-xl">
+                        <p className="text-gray-800 break-words text-sm sm:text-sm ">
                           {path.career.name}
                         </p>
                       </div>
                     </div>
                   </th>
-                  <th className="px-4 text-lg text-center text-green-500 whitespace-nowrap md:text-xl">
+                  <th className="px-8 md:px-16 lg:px-16 text-xs sm:text-sm text-center text-green-500 whitespace-nowrap ">
                     $
                     {path.career.avg_cost_edu
                       .toFixed(0)
                       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                   </th>
-                  <th className="px-4 text-lg text-center text-gray-800 whitespace-nowrap md:text-xl">
+                  <th className="text-gray-800 px-4 text-xs sm:text-sm text-center whitespace-nowrap">
                     {path.career.time_to_complete}&nbsp;years
                   </th>
-                  <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">
+                  <th className="px-4 text-xs sm:text-sm text-center text-green-500 whitespace-nowrap">
                     $
                     {path.career.ave_salary
                       .toFixed(0)
                       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                   </th>
-                  <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">
+                  <th className="px-4 text-xs sm:text-sm text-center text-green-500 whitespace-nowrap ">
                     $
                     {loanTotal
                       .toFixed(0)
                       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                   </th>
-                  <th className="px-4 text-lg text-center text-green-500 bg-white whitespace-nowrap md:text-xl">
+                  <th className="px-4 text-xs sm:text-sm text-center text-green-500 whitespace-nowrap">
                     $
                     {totalEdu
                       .toFixed(0)
                       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                   </th>
-                  <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">
+                  <th className="text-gray-800 px-4 text-xs sm:text-sm text-center whitespace-nowrap">
                     {breakEven.toFixed(2)} years
                   </th>
-                  <th className="px-4 text-lg text-center text-gray-800 bg-white whitespace-nowrap md:text-xl">
+                  <th className="text-gray-800 px-4 text-xs sm:text-sm text-center whitespace-nowrap">
                     <select
                       name="cars"
                       id="cars"
@@ -164,7 +165,7 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
                     <img
                       onClick={() => handleDelete(id)}
                       src="./garbage.png"
-                      className="object-contain h-10 ml-auto mr-auto w-7"
+                      className="object-contain ml-auto mr-auto  w-6 h-6"
                     />
                   </th>
                 </tr>
