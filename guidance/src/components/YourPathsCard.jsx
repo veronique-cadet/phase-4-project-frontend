@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 
 function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
   const [priority, setPriority] = useState(path.priority);
-  const [bgColor, setBgColor] = useState(""); 
+  const [bgColor, setBgColor] = useState("");
 
   useEffect(() => {
     setBgColor(getBgColor(priority));
   }, [priority]);
 
- 
   const refresh = () => {
     fetch("/paths")
       .then((response) => response.json())
@@ -18,12 +17,10 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
       });
   };
 
-
   const handlePriority = (newPriorityValue) => {
     const newPriority = {
       priority: newPriorityValue,
     };
-
 
     console.log(newPriorityValue);
     fetch(`/paths/${id}`, {
@@ -61,24 +58,23 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
     return color;
   };
 
-
   return (
     <section className="transition duration-200 rounded-md bg-gray-50">
-      <div className="px-4">
+      <div className="bg-white">
         <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
           <div className="">
-            <table className="w-full transition duration-200 rounded-md">
+            <table className="w-full transition duration-200 rounded-md border-none">
               <tbody>
                 <tr
-                  className={`${bgColor} whitespace-nowrap h-11 bg-opacity-80`}
+                  className={`${bgColor} whitespace-nowrap h-11 bg-opacity-80 `}
                 >
                   <th className="pl-5 text-lg font-medium text-left text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     <p>CAREER&nbsp;</p>
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500">
+                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     AVG COST OF&nbsp; TUITION
                   </th>
-                  <th className="text-lg font-medium text-white uppercase whitespace-nowrap md:text-xl -500 text-cente">
+                  <th className="text-lg font-medium text-white uppercase whitespace-nowrap md:text-xl -500 text-cente ">
                     TIME TO COMPLETE
                   </th>
                   <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
@@ -87,7 +83,7 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
                   <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     LOAN INTEREST
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500">
+                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     EST TOTAL COST OF EDUCATION
                   </th>
                   <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
@@ -96,7 +92,7 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
                   <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     PRIORITY
                   </th>
-                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500">
+                  <th className="text-lg font-medium text-center text-white uppercase whitespace-nowrap md:text-xl -500 ">
                     Remove
                   </th>
                 </tr>
