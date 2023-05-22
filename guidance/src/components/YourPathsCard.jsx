@@ -66,39 +66,38 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
             <table className="w-full transition duration-200 rounded-md border-none ">
               <tbody className="">
                 <tr
-                  className={`${bgColor} whitespace-nowrap h-11 bg-opacity-80 `}
+                  className={`${bgColor} xl:max-2xl:whitespace-nowrap sm:max-xl:whitespace-normal h-11 bg-opacity-80  `}
                 >
-                  <th className="pl-3 text-xs sm:text-sm font-medium text-left text-white uppercase whitespace-nowrap w-0">
+                  <th className="pl-3 sm:text-sm text-xs font-medium text-left text-white  uppercase  w-0 sm:max-md:pr-10 ">
                     CAREER
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase  w-0 sm:max-md:pr-10 ">
                     AVG COST OF&nbsp; TUITION
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase  w-0 sm:max-lg:pr-10 ">
                     TIME TO COMPLETE
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase w-0 sm:max-md:pr-10 ">
                     AVG SALARY
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase  w-0 sm:max-md:pr-10">
                     LOAN INTEREST
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase  w-0 sm:max-md:pr-10">
                     EST TOTAL COST OF EDUCATION
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase w-0 sm:max-md:pr-10">
                     BREAK EVEN
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase  w-0 sm:max-md:pr-10">
                     PRIORITY
                   </th>
-                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase whitespace-nowrap w-0">
+                  <th className="sm:text-sm text-xs font-medium text-center text-white uppercase  w-0 sm:max-md:pr-10">
                     Remove
                   </th>
                 </tr>
-                <tr className="border-b border-gray-100 h-18">
-                  <th className="py-2 text-left bg-white max-w-0 pr-32">
-                    
+                <tr className=" h-18">
+                  <th className="py-2 text-left bg-white max-w-0 pr-32 ">
                     <div className="flex items-center w-48 break-words">
                       <div className="w-auto p-1 sm:p-2">
                         <div className="flex items-center justify-center w-6 sm:w-8 h-6 sm:h-8 text-xs sm:text-base font-medium rounded-md">
@@ -168,9 +167,6 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
                       className="object-contain ml-auto mr-auto  w-6 h-6"
                     />
                   </th>
-                </tr>
-                <tr className="border-b border-gray-100 h-18">
-                  <th className="px-4 py-2 text-left bg-white whitespace-nowrap"></th>
                 </tr>
               </tbody>
             </table>
