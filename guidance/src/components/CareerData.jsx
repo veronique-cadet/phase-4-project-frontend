@@ -76,10 +76,10 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       />
                     </div>
                     <div className="flex-1 ">
-                      <h2 className="mb-2 text-3xl font-semibold text-black text-7xl">
+                      <h2 className="mb-2 text-4xl font-semibold text-black ">
                         {currentCareer.name}
                       </h2>
-                      <p className="pb-1 text-xl text-gray-500 pd-5">
+                      <p className="pb-1 text-lg text-gray-500">
                         {" "}
                         {currentCareer.description}
                       </p>
@@ -152,7 +152,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </h2>
 
                 <p className="mb-4 text-base text-center">
-                  Minimum Education Required: {currentCareer.min_edu_req}
+                  Minimum Education Required: <p className="font-bold">{currentCareer.min_edu_req}</p>
                 </p>
                 <section
                   className="pl-20 pr-20 bg-white pt-7"
