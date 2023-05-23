@@ -65,7 +65,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
       <div className="">
         <body className="antialiased bg-body text-body font-body">
           <div className="pl-40 pr-40">
-            <section className="mt-10 transition duration-200 bg-white rounded-md hover:bg-white hover:shadow-2xl">
+            <section className="mt-10 transition duration-200 bg-white rounded-md hover:bg-white">
               <div className="flex flex-wrap items-center m-2 mb-5">
                 <div className="w-full p-2 md:w-1/2">
                   <div className="flex flex-wrap -m-2 ">
@@ -230,16 +230,16 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 <section className="pb-4 bg-gray-50">
                   <div className="container px-4 mx-auto">
                     <div className="h-full p-6 pb-0 mx-auto overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
-                      <div className="flex flex-col items-center justify-between -m-2">
+                      <div className="flex flex-col items-center justify-between -m-2 overflow-scroll">
                         <div className="w-auto p-2">
-                          <h2 className="text-md font-semibold text-gray-900">
+                          <h2 className="text-md text-center font-semibold text-gray-900">
                             Average Salary : $
                             {currentCareer.ave_salary
                               .toFixed(0)
                               .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                           </h2>
                         </div>
-                        <div className="w-auto p-2">
+                        <div className="w-full md:max-2xl:w-full xl:w-auto md:p-2">
                           <DataTable
                             currentCareer={currentCareer}
                             setCurrentCareer={setCurrentCareer}
