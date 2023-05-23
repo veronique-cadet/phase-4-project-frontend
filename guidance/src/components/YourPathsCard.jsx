@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
   const [priority, setPriority] = useState(path.priority);
   const [bgColor, setBgColor] = useState("");
 
+const career = path?.career
+  
   useEffect(() => {
     setBgColor(getBgColor(priority));
   }, [priority]);
@@ -60,6 +64,7 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
 
   return (
     <section className="transition duration-200 rounded-md bg-gray-50">
+      <Link to="/careerdata" state={{ from: career }}>
       <div className="bg-white">
         <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
           <div className="overflow-x-scroll md:overflow-x-auto">
@@ -173,6 +178,7 @@ function YourPathsCard({ yourPaths, path, setYourPaths, id, handleDelete }) {
           </div>
         </div>
       </div>
+      </Link>
     </section>
   );
 }
