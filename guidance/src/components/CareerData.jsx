@@ -156,7 +156,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
 
             <div className="flex flex-wrap -mx-4 -mb-4 md:mb-0 ">
               <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
-                <h2 className="pt-2 pb-3 mb-4 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
+                <h2 className="pt-8 pb-3 mb-4 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
                   Education
                 </h2>
 
@@ -213,13 +213,13 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </section>
 
                 <img
-                  className="content-center ml-auto mr-auto h-25 w-25 rounded-7xl"
-                  src="./booklogo.png"
-                  alt=""
+                  className="mx-auto w-28"
+                  src="./summary.png"
+                  alt="picture of cap and money"
                 />
               </div>
               <div className="w-full px-4 mt-5 mb-4 transition rounded-lg duration-5 ration-200 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
-                <h2 className="pt-2 mb-4 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
+                <h2 className="pt-8 mb-4 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
                   Salary
                 </h2>
 
@@ -233,10 +233,10 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="flex flex-col items-center justify-between -m-2 overflow-scroll">
                         <div className="w-auto p-2">
                           <h2 className="text-md text-center font-semibold text-gray-900">
-                            Average Salary : $
+                            Average Salary : <span className="font-bold text-green-500">$
                             {currentCareer.ave_salary
                               .toFixed(0)
-                              .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                              .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</span>
                           </h2>
                         </div>
                         <div className="w-full md:max-2xl:w-full xl:w-auto md:p-2">
@@ -254,11 +254,11 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </section>
               </div>
               <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
-                <h2 className="pt-2 font-bold leading-tight tracking-tighter text-center text-3xl text-darkgray-900 mb-5">
+                <h2 className="pt-8 font-bold leading-tight tracking-tighter text-center text-3xl text-darkgray-900 mb-5">
                   Loans
                 </h2>
 
-                <p className="px-6 mb-6 text-base text-center">
+                <p className="px-2  mb-6 text-base text-center">
                   We understand that loans can be a complex and daunting topic
                   for many people. That’s why we’re here to help.{" "}
                   <a
@@ -324,11 +324,11 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </div>
               </div>
               <div className="w-full px-4 mt-5 mb-4 rounded-lg ration-200 mgtransition md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
-                <h2 className="pt-2 mb-5 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
+                <h2 className="pt-8 mb-5 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
                   Summary
                 </h2>
 
-                <p className="px-10 text-base text-center ">
+                <p className="px-2 text-base text-center ">
                   Investing
                   <span className="font-bold text-green-500">
                     {" "}
@@ -372,7 +372,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   }}
                 >
                   <div className="container px-4 mx-auto">
-                    <div className="flex flex-wrap pb-5 -mx-4 text-center justify-evenly pt-12">
+                    <div className="flex flex-wrap pb-2 -mx-4 text-center justify-evenly pt-12">
                       <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500 ">
                           $
@@ -412,6 +412,9 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                     </div>
                   </div>
                 </section>
+                <div>
+                  <img src="/internship.png" className="w-28 mx-auto mb-6" />
+                </div>
               </div>
             </div>
 
