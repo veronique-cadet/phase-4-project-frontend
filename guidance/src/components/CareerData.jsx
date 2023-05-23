@@ -258,11 +258,11 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   Loans
                 </h2>
 
-                <p className="px-8 mb-6 text-base text-center">
+                <p className="px-6 mb-6 text-base text-center">
                   We understand that loans can be a complex and daunting topic
                   for many people. That’s why we’re here to help.{" "}
                   <a
-                    className="text-green-500"
+                    className="text-green-500 font-bold"
                     target="_blank"
                     href="https://studentaid.gov/understand-aid/types/loans"
                   >
@@ -329,23 +329,38 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </h2>
 
                 <p className="px-10 text-base text-center ">
-                  Investing $
-                  {currentCareer.avg_cost_edu
-                    .toFixed(0)
-                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
-                  and {currentCareer.time_to_complete} years of education to
-                  become a Nurse Technician may seem like a significant
-                  commitment, but the potential long-term financial benefits are
-                  worth considering. Based on the average total salary of $
-                  {currentCareer.ave_salary
-                    .toFixed(0)
-                    .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
+                  Investing
+                  <span className="font-bold text-green-500">
+                    {" "}
+                    $
+                    {currentCareer.avg_cost_edu
+                      .toFixed(0)
+                      .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
+                  </span>
+                  and{" "}
+                  <span className="font-bold">
+                    {currentCareer.time_to_complete} years{" "}
+                  </span>
+                  of education to become a Nurse Technician may seem like a
+                  significant commitment, but the potential long-term financial
+                  benefits are worth considering. Based on the average total
+                  salary of{" "}
+                  <span className="font-bold text-green-500">
+                    {" "}
+                    $
+                    {currentCareer.ave_salary
+                      .toFixed(0)
+                      .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
+                  </span>
                   per year, you can expect to break even on your investment
                   within approximately{" "}
-                  {(
-                    currentCareer.avg_cost_edu / currentCareer.ave_salary
-                  ).toFixed(2)}{" "}
-                  years.
+                  <span className="font-bold">
+                    {(
+                      currentCareer.avg_cost_edu / currentCareer.ave_salary
+                    ).toFixed(2)}{" "}
+                    years
+                  </span>
+                  .
                 </p>
 
                 <section
