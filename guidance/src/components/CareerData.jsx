@@ -191,7 +191,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       </div>
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 ">
-                          {currentCareer.time_to_complete}y
+                          {currentCareer.time_to_complete} years
                         </h2>
                         <p className="text-md font-medium text-gray-500 ">
                           Average time 
@@ -223,7 +223,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   Salary
                 </h2>
 
-                <p className="text-base text-center">
+                <p className="text-base text-center mb-2">
                   How much do {currentCareer.name}s make?
                 </p>
 
@@ -232,7 +232,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                     <div className="h-full p-6 pb-0 mx-auto overflow-hidden bg-white border border-gray-100 rounded-md shadow-dashboard">
                       <div className="flex flex-col items-center justify-between -m-2">
                         <div className="w-auto p-2">
-                          <h2 className="text-lg font-semibold text-gray-900">
+                          <h2 className="text-md font-semibold text-gray-900">
                             Average Salary : $
                             {currentCareer.ave_salary
                               .toFixed(0)
@@ -254,7 +254,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </section>
               </div>
               <div className="w-full px-4 mt-5 transition duration-200 rounded-lg mb-7 md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
-                <h2 className="pt-2 font-bold leading-tight tracking-tighter text-center text-3xl text-darkgray-900">
+                <h2 className="pt-2 font-bold leading-tight tracking-tighter text-center text-3xl text-darkgray-900 mb-5">
                   Loans
                 </h2>
 
@@ -324,7 +324,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </div>
               </div>
               <div className="w-full px-4 mt-5 mb-4 rounded-lg ration-200 mgtransition md:w-1/2 md:mb-0 hover:bg-white hover:shadow-2xl">
-                <h2 className="pt-2 mb-4 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
+                <h2 className="pt-2 mb-5 text-3xl font-bold leading-tight tracking-tighter text-center  text-darkgray-900">
                   Summary
                 </h2>
 
@@ -357,41 +357,41 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   }}
                 >
                   <div className="container px-4 mx-auto">
-                    <div className="flex flex-wrap justify-center pt-10 text-center -mx10-4">
-                      <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-5xl font-bold tracking-tighter text-green-500 md:text-4xl">
+                    <div className="flex flex-wrap pb-5 -mx-4 text-center justify-evenly pt-12">
+                      <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
+                        <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500 ">
                           $
                           {currentCareer.avg_cost_edu
                             .toFixed(0)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         </h2>
-                        <p className="text-lg font-medium text-gray-500 md:text-xl">
+                        <p className="text-md font-medium text-gray-500 ">
                           Total Education Cost
                         </p>
                       </div>
-                      <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-green-500 md:text-4xl">
+                      <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
+                        <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500 ">
                           $
                           {currentCareer.ave_salary
                             .toFixed(0)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         </h2>
-                        <p className="text-lg font-medium text-gray-500 md:text-xl">
+                        <p className="text-md font-medium text-gray-500 ">
                           Potential Salary
                         </p>
                       </div>
-                      <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
-                        <h2 className="mb-2 text-4xl font-bold tracking-tighter text-gray-900 md:text-4xl">
+                      <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
+                        <h2 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 ">
                           {(
                             currentCareer.avg_cost_edu /
                             currentCareer.ave_salary
                           )
                             .toFixed(2)
-                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
-                          y
+                            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
+                          years
                         </h2>
-                        <p className="text-lg font-medium text-gray-500 md:text-lg">
-                          Amount of years you need to work to breakeven
+                        <p className="text-md font-medium text-gray-500 ">
+                          Breakeven
                         </p>
                       </div>
                     </div>
