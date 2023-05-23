@@ -7,10 +7,10 @@ import { useLocation } from "react-router-dom";
 function CareerData({ careerId, yourPaths, setYourPaths, user }) {
   // console.log(careerId);
   const career = useLocation();
-  const { from } = career.state?.from;
+  const { from } = career?.state?.from;
   //don't delete the below console log
-  console.log(career.state?.from.id);
-  const id = career.state?.from.id;
+  console.log(career?.state?.from.id);
+  const id = career?.state?.from.id;
 
   const [amount, setAmount] = useState(0);
   const [term, setTerm] = useState(0);
@@ -52,10 +52,10 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
     loan_amt: amount,
     interest_rate: interest,
     loan_term: term,
-    user_id: user.id,
-    career_id: currentCareer.id,
+    user_id: user?.id,
+    career_id: currentCareer?.id,
   };
-  if (!currentCareer.name) return null;
+  if (!currentCareer?.name) return null;
   if (!career.state?.from.id) return null;
   // console.log(currentCareer)
 
@@ -77,11 +77,11 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                     </div>
                     <div className="flex-1 ">
                       <h2 className="mb-2 text-4xl font-semibold text-black ">
-                        {currentCareer.name}
+                        {currentCareer?.name}
                       </h2>
                       <p className="pb-1 text-lg text-gray-500">
                         {" "}
-                        {currentCareer.description}
+                        {currentCareer?.description}
                       </p>
                     </div>
                   </div>
@@ -162,7 +162,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
 
                 <p className="mb-4 text-base text-center">
                   Minimum Education Required:{" "}
-                  <p className="font-bold">{currentCareer.min_edu_req}</p>
+                  <p className="font-bold">{currentCareer?.min_edu_req}</p>
                 </p>
                 <section
                   className=" bg-white pt-7"
@@ -178,8 +178,8 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500 ">
                           $
                           {(
-                            currentCareer.avg_cost_edu /
-                            currentCareer.time_to_complete
+                            currentCareer?.avg_cost_edu /
+                            currentCareer?.time_to_complete
                           )
 
                             .toFixed(0)
@@ -191,7 +191,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       </div>
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 ">
-                          {currentCareer.time_to_complete} years
+                          {currentCareer?.time_to_complete} years
                         </h2>
                         <p className="text-md font-medium text-gray-500 ">
                           Average time 
@@ -200,7 +200,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="w-full px-4 mb-8 md:w-1/3 lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500">
                           $
-                          {currentCareer.avg_cost_edu
+                          {currentCareer?.avg_cost_edu
                             .toFixed(0)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         </h2>
@@ -224,7 +224,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                 </h2>
 
                 <p className="text-base text-center mb-2">
-                  How much do {currentCareer.name}s make?
+                  How much do {currentCareer?.name}s make?
                 </p>
 
                 <section className="pb-4 bg-gray-50">
@@ -234,7 +234,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                         <div className="w-auto p-2">
                           <h2 className="text-md text-center font-semibold text-gray-900">
                             Average Salary : <span className="font-bold text-green-500">$
-                            {currentCareer.ave_salary
+                            {currentCareer?.ave_salary
                               .toFixed(0)
                               .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</span>
                           </h2>
@@ -333,13 +333,13 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   <span className="font-bold text-green-500">
                     {" "}
                     $
-                    {currentCareer.avg_cost_edu
+                    {currentCareer?.avg_cost_edu
                       .toFixed(0)
                       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
                   </span>
                   and{" "}
                   <span className="font-bold">
-                    {currentCareer.time_to_complete} years{" "}
+                    {currentCareer?.time_to_complete} years{" "}
                   </span>
                   of education to become a Nurse Technician may seem like a
                   significant commitment, but the potential long-term financial
@@ -348,7 +348,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   <span className="font-bold text-green-500">
                     {" "}
                     $
-                    {currentCareer.ave_salary
+                    {currentCareer?.ave_salary
                       .toFixed(0)
                       .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}
                   </span>
@@ -356,7 +356,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                   within approximately{" "}
                   <span className="font-bold">
                     {(
-                      currentCareer.avg_cost_edu / currentCareer.ave_salary
+                      currentCareer?.avg_cost_edu / currentCareer?.ave_salary
                     ).toFixed(2)}{" "}
                     years
                   </span>
@@ -376,7 +376,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500 ">
                           $
-                          {currentCareer.avg_cost_edu
+                          {currentCareer?.avg_cost_edu
                             .toFixed(0)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         </h2>
@@ -387,7 +387,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-green-500 ">
                           $
-                          {currentCareer.ave_salary
+                          {currentCareer?.ave_salary
                             .toFixed(0)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
                         </h2>
@@ -398,8 +398,8 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="w-full px-4 mb-8  lg:w-1/4 lg:mb-0">
                         <h2 className="mb-2 text-xl font-bold tracking-tighter text-gray-900 ">
                           {(
-                            currentCareer.avg_cost_edu /
-                            currentCareer.ave_salary
+                            currentCareer?.avg_cost_edu /
+                            currentCareer?.ave_salary
                           )
                             .toFixed(2)
                             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}{" "}

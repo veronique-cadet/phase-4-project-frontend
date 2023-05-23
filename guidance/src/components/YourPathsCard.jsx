@@ -64,7 +64,7 @@ const career = path?.career
 
   return (
     <section className="transition duration-200 rounded-md bg-gray-50">
-      <Link to="/careerdata" state={{ from: career }}>
+     
       <div className="bg-white">
         <div className="content-center pt-10 pb-8 mb-10 ml-5 mr-5 overflow-hidden transition duration-200 bg-white border-2 border-green-500 rounded-md shadow-dashboard hover:bg-white hover:shadow-2xl">
           <div className="overflow-x-scroll md:overflow-x-auto">
@@ -103,6 +103,7 @@ const career = path?.career
                 </tr>
                 <tr className=" h-18">
                   <th className="py-2 text-left bg-white max-w-0 pr-32 ">
+                  <Link to="/careerdata" state={{ from: career }}>
                     <div className="flex items-center w-48 break-words">
                       <div className="w-auto p-1 sm:p-2">
                         <div className="flex items-center justify-center w-6 sm:w-8 h-6 sm:h-8 text-xs sm:text-base font-medium rounded-md">
@@ -115,6 +116,7 @@ const career = path?.career
                         </p>
                       </div>
                     </div>
+                    </Link>
                   </th>
                   <th className="px-8 md:px-16 lg:px-16 text-xs sm:text-sm text-center text-green-500 whitespace-nowrap ">
                     $
@@ -178,7 +180,7 @@ const career = path?.career
           </div>
         </div>
       </div>
-      </Link>
+    
     </section>
   );
 }
