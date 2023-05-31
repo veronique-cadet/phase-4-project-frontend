@@ -92,7 +92,9 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       {}
                       <button className="flex flex-wrap items-center justify-center w-full px-4 py-3 text-base font-medium text-gray-500 bg-white border border-gray-200 rounded-md hover:bg-gray-100 shadow-button">
                         <a
-                          href="https://www.google.com/"
+                          href={`https://www.google.com/search?q=${encodeURIComponent(
+                            currentCareer?.name + " career"
+                          )}`}
                           className="hover:bg-gray-100"
                           target="_blank"
                         >
@@ -233,10 +235,13 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="flex flex-col items-center justify-between -m-2 overflow-scroll">
                         <div className="w-auto p-2">
                           <h2 className="text-md text-center font-semibold text-gray-900">
-                            Average Salary : <span className="font-bold text-green-500">$
-                            {currentCareer?.ave_salary
-                              .toFixed(0)
-                              .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</span>
+                            Average Salary :{" "}
+                            <span className="font-bold text-green-500">
+                              $
+                              {currentCareer?.ave_salary
+                                .toFixed(0)
+                                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                            </span>
                           </h2>
                         </div>
                         <div className="w-full md:max-2xl:w-full xl:w-auto md:p-2">
