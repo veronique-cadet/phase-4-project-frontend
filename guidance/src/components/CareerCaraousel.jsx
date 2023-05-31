@@ -15,7 +15,7 @@ function CareerCaraousel({careers, careerId, setCareerId}) {
     <div>
       <section className="py-4 bg-coolGray-50">
         <div className="container flex px-4 mx-auto justify-evenly">
-                <div className="flex flex-wrap -m-3">
+                <div className="lg:flex lg:flex-wrap lg:-m-3">
 
           {threeCareers.map((career)=>{
             return <CarouselCard key={career.id} career={career} showsInfo={showsInfo} careerId={careerId}/>

@@ -30,7 +30,7 @@ function YourPaths({ yourPaths, setYourPaths, user }) {
   console.log(yourPaths)
 
   const filteredPaths = yourPaths.filter((path) => {
-    if (user) return user.id === path.user.id;
+    if (user) return user?.id === path?.user?.id;
     else return path;
   
 
