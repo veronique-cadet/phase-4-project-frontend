@@ -4,7 +4,7 @@ function Features() {
   return (
     <div>
       <section
-        className="py-24 bg-white md:py-28"
+        className="py-8 bg-white md:py-2 lg:py-6 xl:py-16"
         style={{
           backgroundImage: "url('flex-ui-assets/elements/pattern-white.svg')",
           backgroundPosition: "center",
@@ -55,10 +55,8 @@ function Features() {
               </div>
             </div>
           </div>
-
         </div>
       </section>
-
     </div>
   );
 }
