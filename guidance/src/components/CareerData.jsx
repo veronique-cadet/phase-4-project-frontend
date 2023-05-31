@@ -64,9 +64,9 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
       <NavBarTwo />
       <div className="">
         <body className="antialiased bg-body text-body font-body">
-          <div className="pl-40 pr-40">
+          <div className="lg:pl-32 lg:pr-32 md:pl-8 md:pr-8  pl-4 pr-4 2xl:pl-40 2xl:pr-40">
             <section className="mt-10 transition duration-200 bg-white rounded-md hover:bg-white">
-              <div className="flex flex-wrap items-center m-2 mb-5">
+              <div className="flex flex-wrap items-center m-2 mb-2">
                 <div className="w-full p-2 md:w-1/2">
                   <div className="flex flex-wrap -m-2 ">
                     <div className="w-auto">
