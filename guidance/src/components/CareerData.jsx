@@ -76,7 +76,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       />
                     </div>
                     <div className="flex-1 ">
-                      <h2 className="mb-2 text-4xl font-semibold text-black ">
+                      <h2 className="mb-2 text-4xl text-center md:text-left font-semibold text-black ">
                         {currentCareer?.name}
                       </h2>
                       <p className="pb-1 text-lg text-gray-500">
