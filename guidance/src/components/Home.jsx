@@ -9,7 +9,7 @@ function Home() {
     <div>
       <div className="bg-tarnsparent">
         <NavBar />
-        <div className="py-20 md:py-16 lg:py-12 xl:py-8">
+        <div className="py-2 md:py-10 lg:py-12 xl:py-8">
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-4 xl:items-center">
               <div className="w-full px-4 mb-16 md:w-1/2 md:mb-0">
