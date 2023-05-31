@@ -38,6 +38,7 @@ function App() {
     <div className="bg-tarnsparent">
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="*" element={<Error />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/signin" element={<SignIn user={user} setUser={setUser}/>}></Route>
         <Route path="/signup" element={<SignUp />}></Route>

@@ -78,11 +78,11 @@ function SignIn({ user, setUser }) {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div className="flex flex-wrap items-center justify-between mb-6">
-                <div className="w-full md:w-1/2">
-                  <label className="relative inline-flex items-center">
+              <div className="flex  items-baseline justify-between mb-6">
+                <div className="w-full md:w-1/2 ">
+                  <label className="relative inline-flex items-center ">
                     <input
-                      className="appearance-none form-checkbox"
+                      className="appearance-none form-checkbox h-3 w-3 border border-black"
                       type="checkbox"
                     />
                     <img
@@ -90,14 +90,14 @@ function SignIn({ user, setUser }) {
                       src="flex-ui-assets/elements/sign-up/checkbox-icon.svg"
                       alt=""
                     />
-                    <span className="text-xs font-medium ml-7 text-coolGray-800">
+                    <span className="text-xs font-medium ml-1 text-coolGray-800">
                       Remember me
                     </span>
                   </label>
                 </div>
-                <div className="w-full mt-1 md:w-auto">
+                <div className="w-full mt-1 md:w-auto text-right">
                   <a
-                    className="inline-block text-xs font-medium text-green-500 hover:text-green-600"
+                    className="inline-block  text-xs font-medium text-green-500 hover:text-green-600"
                     href="#"
                   >
                     Forgot your password?
