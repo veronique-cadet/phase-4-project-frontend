@@ -64,9 +64,9 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
       <NavBarTwo />
       <div className="">
         <body className="antialiased bg-body text-body font-body">
-          <div className="pl-40 pr-40">
+          <div className="lg:pl-32 lg:pr-32 md:pl-8 md:pr-8  pl-4 pr-4 2xl:pl-40 2xl:pr-40">
             <section className="mt-10 transition duration-200 bg-white rounded-md hover:bg-white">
-              <div className="flex flex-wrap items-center m-2 mb-5">
+              <div className="flex flex-wrap items-center m-2 mb-2">
                 <div className="w-full p-2 md:w-1/2">
                   <div className="flex flex-wrap -m-2 ">
                     <div className="w-auto">
@@ -76,7 +76,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       />
                     </div>
                     <div className="flex-1 ">
-                      <h2 className="mb-2 text-4xl font-semibold text-black ">
+                      <h2 className="mb-2 text-4xl text-center md:text-left font-semibold text-black ">
                         {currentCareer?.name}
                       </h2>
                       <p className="pb-1 text-lg text-gray-500">
@@ -92,7 +92,9 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       {}
                       <button className="flex flex-wrap items-center justify-center w-full px-4 py-3 text-base font-medium text-gray-500 bg-white border border-gray-200 rounded-md hover:bg-gray-100 shadow-button">
                         <a
-                          href="https://www.google.com/"
+                          href={`https://www.google.com/search?q=${encodeURIComponent(
+                            currentCareer?.name + " career"
+                          )}`}
                           className="hover:bg-gray-100"
                           target="_blank"
                         >
@@ -233,10 +235,13 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
                       <div className="flex flex-col items-center justify-between -m-2 overflow-scroll">
                         <div className="w-auto p-2">
                           <h2 className="text-md text-center font-semibold text-gray-900">
-                            Average Salary : <span className="font-bold text-green-500">$
-                            {currentCareer?.ave_salary
-                              .toFixed(0)
-                              .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}</span>
+                            Average Salary :{" "}
+                            <span className="font-bold text-green-500">
+                              $
+                              {currentCareer?.ave_salary
+                                .toFixed(0)
+                                .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")}
+                            </span>
                           </h2>
                         </div>
                         <div className="w-full md:max-2xl:w-full xl:w-auto md:p-2">

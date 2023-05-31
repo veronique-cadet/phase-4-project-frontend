@@ -1,40 +1,39 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import SignUp from "./SignUp";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
-function SignIn({user,setUser}) {
-
+function SignIn({ user, setUser }) {
   // const [user, setUser] = useState(null)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const navigate = useNavigate()
-  
-  const signIn =(e)=>{
-    e.preventDefault()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const signIn = (e) => {
+    e.preventDefault();
 
     fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({email, password }),
+      body: JSON.stringify({ email, password }),
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data)
-        console.log(user)
+        setUser(data);
+        console.log(user);
         navigate("/explore");
-      })
-    }
-// console.log(user)
+      });
+  };
+  // console.log(user)
   return (
     <div>
       <section
-        className="py-24 md:py-32 bg-white background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"
+        className="py-16 xl:py-20 2xl:py-44 bg-white background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"
         // style="background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"
       >
-        <div className="container px-4 mx-auto">
-          <div className="max-w-sm mx-auto">
+        <div className=" container px-4 mx-auto ">
+          <div className="max-w-sm mx-auto ">
             <div className="mb-6 text-center">
               <a className="inline-block mb-6" href="#">
                 <Link to="/home">
@@ -79,11 +78,11 @@ function SignIn({user,setUser}) {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <div className="flex flex-wrap items-center justify-between mb-6">
-                <div className="w-full md:w-1/2">
-                  <label className="relative inline-flex items-center">
+              <div className="flex  items-baseline justify-between mb-6">
+                <div className="w-full md:w-1/2 ">
+                  <label className="relative inline-flex items-center ">
                     <input
-                      className="appearance-none form-checkbox"
+                      className="appearance-none form-checkbox h-3 w-3 border border-black"
                       type="checkbox"
                     />
                     <img
@@ -91,14 +90,14 @@ function SignIn({user,setUser}) {
                       src="flex-ui-assets/elements/sign-up/checkbox-icon.svg"
                       alt=""
                     />
-                    <span className="text-xs font-medium ml-7 text-coolGray-800">
+                    <span className="text-xs font-medium ml-1 text-coolGray-800">
                       Remember me
                     </span>
                   </label>
                 </div>
-                <div className="w-full mt-1 md:w-auto">
+                <div className="w-full mt-1 md:w-auto text-right">
                   <a
-                    className="inline-block text-xs font-medium text-green-500 hover:text-green-600"
+                    className="inline-block  text-xs font-medium text-green-500 hover:text-green-600"
                     href="#"
                   >
                     Forgot your password?
