@@ -13,6 +13,7 @@ import EditProfile from "./components/EditProfile";
 import CarouselCard from "./components/CarouselCard";
 import { useState, useEffect } from "react";
 import DataTable from "./components/DataTable";
+import NotFound404 from "./components/NotFound404";
 
 function App() {
   const [careerId, setCareerId] = useState(0)
@@ -38,7 +39,7 @@ function App() {
     <div className="bg-tarnsparent">
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="*" element={<Error />} /> */}
+        <Route path="*" element={<NotFound404 />} />
         <Route path="/home" element={<Home />} />
         <Route path="/signin" element={<SignIn user={user} setUser={setUser}/>}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
