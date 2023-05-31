@@ -1,40 +1,39 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import SignUp from "./SignUp";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
-function SignIn({user,setUser}) {
-
+function SignIn({ user, setUser }) {
   // const [user, setUser] = useState(null)
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const navigate = useNavigate()
-  
-  const signIn =(e)=>{
-    e.preventDefault()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const signIn = (e) => {
+    e.preventDefault();
 
     fetch(`/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({email, password }),
+      body: JSON.stringify({ email, password }),
     })
       .then((res) => res.json())
       .then((data) => {
-        setUser(data)
-        console.log(user)
+        setUser(data);
+        console.log(user);
         navigate("/explore");
-      })
-    }
-// console.log(user)
+      });
+  };
+  // console.log(user)
   return (
     <div>
       <section
-        className="py-24 md:py-32 bg-white background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"
+        className="py-16 xl:py-20 2xl:py-44 bg-white background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"
         // style="background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;"
       >
-        <div className="container px-4 mx-auto">
-          <div className="max-w-sm mx-auto">
+        <div className=" container px-4 mx-auto ">
+          <div className="max-w-sm mx-auto ">
             <div className="mb-6 text-center">
               <a className="inline-block mb-6" href="#">
                 <Link to="/home">
