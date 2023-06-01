@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBarTwo from "./NavBarTwo.jsx";
 import Footer from "./Footer.jsx";
 
 
 function ContactPage() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
 
