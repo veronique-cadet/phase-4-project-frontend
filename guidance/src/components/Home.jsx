@@ -13,7 +13,7 @@ function Home() {
           <div className="container px-4 mx-auto">
             <div className="flex flex-wrap -mx-4 xl:items-center">
               <div className="w-full px-4 mb-16 md:w-1/2 md:mb-0">
-                <h1 className="mb-6 text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+                <h1 className="mb-6 text-3xl text-center md:text-left font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
                   Unlock the Full Potential of Your Education
                 </h1>
                 <p className="mb-8 text-lg font-medium text-gray-500 md:text-xl">
