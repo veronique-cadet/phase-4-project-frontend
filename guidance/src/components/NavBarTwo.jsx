@@ -1,7 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function NavBarTwo() {
+function NavBarTwo({user, setUser}) {
+
+    const navigate = useNavigate();
+
+  function handleDelete(e) {
+    e.preventDefault();
+    setUser(null);
+    fetch(`/logout`, { method: "DELETE" })
+      .then((req) => req.json())
+      .then((data) => {
+        // Handle the response data if needed
+        console.log(data);
+      })
+      .catch((error) => console.error("Error:", error));
+    navigate("/home");
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -69,15 +85,16 @@ function NavBarTwo() {
                   Edit Profile
                 </a>
               </Link>
-              <Link to="/home">
-                <a
+             
+                <button
                   className="inline-block px-4 py-2 text-sm font-medium leading-5 bg-green-500 rounded-md text-green-50 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                   href="#"
                   // contentEditable="false"
+                  onClick={handleDelete}
                 >
                   Log Out
-                </a>
-              </Link>
+                </button>
+           
             </div>
           </div>
         </div>
@@ -177,12 +194,13 @@ function NavBarTwo() {
                   </a>
                 </div> */}
                 <div className="w-full">
-                  <a
+                  <button
                     className="inline-block w-full px-4 py-2 text-sm font-medium leading-5 text-center text-white bg-green-500 rounded-md hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                     href="#"
+                    onClick={handleDelete}
                   >
                     Log Out
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
