@@ -110,7 +110,7 @@ const career = path?.career
                           <img src="./career.png" alt="Career" />
                         </div>
                       </div>
-                      <div className="p-2 w-35">
+                      <div className="pr-8 pl-2 md:p-2 w-35 ">
                         <p className="text-gray-800 break-words text-sm sm:text-sm ">
                           {path.career.name}
                         </p>
