@@ -50,7 +50,7 @@ function App() {
         <Route path="/editprofile" element={<EditProfile user={user}/>}></Route>
         <Route path="/card" element={<CarouselCard />}></Route>
         <Route path="/data" element={<DataTable />}></Route>
-        <Route path="/contact" element={<ContactPage />}></Route>
+        <Route path="/contact" element={<ContactPage  user={user}/>}></Route>
       </Routes>
     </div>
   );

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import NavBarTwo from "./NavBarTwo.jsx";
 import Footer from "./Footer.jsx";
+import NavBar from "./NavBar.jsx";
 
 
-function ContactPage() {
+function ContactPage({user}) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -39,7 +40,7 @@ function ContactPage() {
 
   return (
     <div className="">
-      <NavBarTwo />
+      {user ? <NavBar /> : <NavBarTwo/>}
       <section className="h-full w-full py-8 mb-10 bg-white background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
         <div className=" container px-4 mx-auto">
           <div className="mb-2 w-full h-full overflow-hidden">
