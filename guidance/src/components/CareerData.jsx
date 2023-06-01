@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 import DataTable from "./DataTable";
 import { useLocation } from "react-router-dom";
 
-function CareerData({ careerId, yourPaths, setYourPaths, user }) {
+function CareerData({ careerId, yourPaths, setYourPaths, user, setUser }) {
   // console.log(careerId);
   const career = useLocation();
   const { from } = career?.state?.from;
@@ -61,7 +61,7 @@ function CareerData({ careerId, yourPaths, setYourPaths, user }) {
 
   return (
     <div>
-      <NavBarTwo />
+      <NavBarTwo setUser={setUser}/>
       <div className="">
         <body className="antialiased bg-body text-body font-body">
           <div className="lg:pl-32 lg:pr-32 md:pl-8 md:pr-8  pl-4 pr-4 2xl:pl-40 2xl:pr-40">

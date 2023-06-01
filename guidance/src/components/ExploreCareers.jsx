@@ -4,7 +4,7 @@ import NavBarTwo from "./NavBarTwo";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
-function ExploreCareers({ careerId, setCareerId, user }) {
+function ExploreCareers({ careerId, setCareerId, user, setUser }) {
   const [careers, setCareers] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
@@ -42,7 +42,7 @@ function ExploreCareers({ careerId, setCareerId, user }) {
 
   return (
     <div>
-      <NavBarTwo />
+      <NavBarTwo setUser={setUser}/>
       <section className="py-4 bg-gray-50">
         <div className="container px-4 mx-auto">
           {user ? (

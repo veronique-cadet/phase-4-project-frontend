@@ -3,7 +3,7 @@ import NavBarTwo from './NavBarTwo'
 import Footer from "./Footer.jsx"
 import { Link } from "react-router-dom";
 
-function EditProfile({user}) {
+function EditProfile({user, setUser}) {
 
   const [first, setFirst] = useState(user.first_name)
   const [last, setLast] = useState(user.last_name)
@@ -30,7 +30,7 @@ fetch(`http://localhost:3000/users/${user}`, {
 
   return (
     <div>
-      <NavBarTwo />
+      <NavBarTwo setUser={setUser} />
       <section className="py-4 bg-white">
   <div className="container p-16 px-4 mx-auto">
     <div className="h-full overflow-hidden bg-white rounded-md">

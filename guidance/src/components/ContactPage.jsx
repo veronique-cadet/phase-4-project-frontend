@@ -3,13 +3,11 @@ import NavBarTwo from "./NavBarTwo.jsx";
 import Footer from "./Footer.jsx";
 import NavBar from "./NavBar.jsx";
 
+function ContactPage({ user, setUser }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-function ContactPage({user}) {
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-      }, []);
-    
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
 
@@ -40,7 +38,7 @@ function ContactPage({user}) {
 
   return (
     <div className="">
-      {user ? <NavBar /> : <NavBarTwo/>}
+      {user ? <NavBarTwo setUser={setUser} /> : <NavBar setUser={setUser} />}
       <section className="h-full w-full py-8 mb-10 bg-white background-image: url('flex-ui-assets/elements/pattern-white.svg'); background-position: center;">
         <div className=" container px-4 mx-auto">
           <div className="mb-2 w-full h-full overflow-hidden">
@@ -63,7 +61,7 @@ function ContactPage({user}) {
 
           <div className="h-full md:px-4 w-1/2 mx-auto">
             <div className="md:px-4 py-2 md:py-8 md:p-10 bg-coolGray-50 rounded-md mx-auto">
-              <form >
+              <form>
                 <div className="mb-6">
                   <label
                     className="block mb-2 text-coolGray-800 font-medium leading-6"
@@ -94,8 +92,10 @@ function ContactPage({user}) {
                     onChange={(e) => setMessage(e.target.value)}
                   ></textarea>
                 </div>
-                <button onClick={handleSubmit}
-                className="block w-full py-4 px-6 text-lg leading-6 text-coolGray-50 font-medium text-center text-white bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm">
+                <button
+                  onClick={handleSubmit}
+                  className="block w-full py-4 px-6 text-lg leading-6 text-coolGray-50 font-medium text-center text-white bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm"
+                >
                   Send
                 </button>
               </form>

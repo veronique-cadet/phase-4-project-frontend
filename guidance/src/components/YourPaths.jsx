@@ -4,7 +4,7 @@ import YourPathsCard from "./YourPathsCard";
 import { useState, useEffect } from "react";
 import Footer from "./Footer.jsx";
 
-function YourPaths({ yourPaths, setYourPaths, user }) {
+function YourPaths({ yourPaths, setYourPaths, user, setUser }) {
   useEffect(() => {
     fetch("/paths")
       .then((response) => response.json())
@@ -48,7 +48,7 @@ function YourPaths({ yourPaths, setYourPaths, user }) {
 
   return (
     <div>
-      <NavBarTwo />
+      <NavBarTwo setUser={setUser} />
       {user ? (
         <div>
           <h2 className="pb-5 mt-5 mb-4 text-4xl font-bold tracking-tighter text-center md:text-5xl text-coolGray-900">

@@ -40,18 +40,18 @@ function App() {
     <div className="bg-tarnsparent">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound404 />} />
+        {/* <Route path="*" element={<Error />} /> */}
         <Route path="/home" element={<Home />} />
         <Route path="/signin" element={<SignIn user={user} setUser={setUser}/>}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/carousel" element={<CareerCaraousel />}></Route>
         <Route path="/explore"  element={<ExploreCareers user={user} setUser={setUser} careerId={careerId} setCareerId={setCareerId} />}></Route>
-        <Route path="/yourpaths" element={<YourPaths user={user} yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
-        <Route path="/careerdata" element={<CareerData user={user}  careerId={careerId} yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
-        <Route path="/editprofile" element={<EditProfile user={user}/>}></Route>
-        <Route path="/card" element={<CarouselCard />}></Route>
-        <Route path="/data" element={<DataTable />}></Route>
-        <Route path="/contact" element={<ContactPage  user={user}/>}></Route>
+        <Route path="/yourpaths" element={<YourPaths setUser={setUser} user={user} yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
+        <Route path="/careerdata" element={<CareerData setUser={setUser} user={user}  careerId={careerId} yourPaths={yourPaths} setYourPaths={setYourPaths}/>}></Route>
+        <Route path="/editprofile" element={<EditProfile setUser={setUser} user={user}/>}></Route>
+        <Route path="/card" element={<CarouselCard setUser={setUser}/>}></Route>
+        <Route path="/data" element={<DataTable setUser={setUser}/>}></Route>
+        <Route path="/contact" element={<ContactPage  setUser={setUser} user={user}/>}></Route>
       </Routes>
     </div>
   );
