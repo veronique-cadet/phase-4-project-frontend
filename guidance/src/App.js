@@ -14,6 +14,7 @@ import CarouselCard from "./components/CarouselCard";
 import { useState, useEffect } from "react";
 import DataTable from "./components/DataTable";
 import NotFound404 from "./components/NotFound404";
+import ContactPage from "./components/ContactPage";
 
 function App() {
   const [careerId, setCareerId] = useState(0)
@@ -50,6 +51,7 @@ function App() {
         <Route path="/editprofile" element={<EditProfile user={user}/>}></Route>
         <Route path="/card" element={<CarouselCard />}></Route>
         <Route path="/data" element={<DataTable />}></Route>
+        <Route path="/contact" element={<ContactPage  user={user}/>}></Route>
       </Routes>
     </div>
   );
