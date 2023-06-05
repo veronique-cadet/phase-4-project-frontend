@@ -19,14 +19,17 @@ function Footer() {
           </div>
           <div className="w-full px-4 md:w-3/4 lg:flex-1">
             <div className="flex flex-col md:flex-row flex-wrap justify-end -mx-3 lg:-mx-6">
+              <Link to="/about">
+
               <div className="w-full p-3 md:w-auto md:py-0 md:px-6">
                 <a
                   className="inline-block text-lg font-medium md:text-xl text-coolGray-400 hover:text-coolGray-500"
                   href="#"
-                >
+                  >
                   About
                 </a>
               </div>
+              </Link>
               <Link to="/contact"> 
               <div className="w-full p-3 md:w-auto md:py-0 md:px-6">
                 <a
