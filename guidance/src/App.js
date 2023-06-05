@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import DataTable from "./components/DataTable";
 import NotFound404 from "./components/NotFound404";
 import ContactPage from "./components/ContactPage";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   const [careerId, setCareerId] = useState(0)
@@ -52,6 +53,7 @@ function App() {
         <Route path="/card" element={<CarouselCard setUser={setUser}/>}></Route>
         <Route path="/data" element={<DataTable setUser={setUser}/>}></Route>
         <Route path="/contact" element={<ContactPage  setUser={setUser} user={user}/>}></Route>
+        <Route path="/about" element={<AboutPage/>}></Route>
       </Routes>
     </div>
   );
