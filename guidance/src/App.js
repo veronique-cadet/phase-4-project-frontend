@@ -53,7 +53,7 @@ function App() {
         <Route path="/card" element={<CarouselCard setUser={setUser}/>}></Route>
         <Route path="/data" element={<DataTable setUser={setUser}/>}></Route>
         <Route path="/contact" element={<ContactPage  setUser={setUser} user={user}/>}></Route>
-        <Route path="/about" element={<AboutPage/>}></Route>
+        <Route path="/about" element={<AboutPage setUser={setUser} user={user}/>}></Route>
       </Routes>
     </div>
   );
