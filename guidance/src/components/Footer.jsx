@@ -26,7 +26,7 @@ function Footer() {
                   className="inline-block text-lg font-medium md:text-xl text-coolGray-400 hover:text-coolGray-500"
                   href="#"
                   >
-                  About
+                  Team Guidance 
                 </a>
               </div>
               </Link>

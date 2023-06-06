@@ -10,8 +10,24 @@ const AboutPage = ({ user, setUser }) => {
   return (
     <>
       {user ? <NavBarTwo setUser={setUser} /> : <NavBar setUser={setUser} />}
+      <div className="mb-2 w-full h-full overflow-hidden pt-8">
+            <div className="md:w-1/2 w-3/4 mx-auto ">
+              <div className="w-full mx-auto flex justify-center">
+                <p className="px-2 mb-4 text-xs text-green-500 bg-green-100 font-medium uppercase rounded-9xl py-px text-center inline-block">
+                  Team
+                </p>
+              </div>
+
+              <h3 className="mb-4 text-3xl md:text-4xl text-darkCoolGray-900 font-bold tracking-tighter leading-tight text-center">
+               Meet the Guidance Team!
+              </h3>
+              <p className="text-lg md:text-xl text-coolGray-500 font-medium text-center">
+              Meet the brilliant minds behind the Guidance Team—passionate and driven individuals who have come together to create an innovative platform that empowers users to make informed decisions about their education and career paths, ensuring a brighter and more prosperous future.
+              </p>
+            </div>
+          </div>
       <section
-        className="relative py-24 md:py-40 bg-white"
+        className="relative pb-10 pt-10 md:pt-20 md:pb-20 bg-white"
         style={{
           background_image: "url('flex-ui-assets/elements/pattern-white.svg')",
           background_position: "center;",
@@ -19,7 +35,7 @@ const AboutPage = ({ user, setUser }) => {
       >
         <div className="relative z-10 container px-4 mx-auto">
           <div className="flex flex-wrap items-center -mx-4">
-            <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0">
+            <div className="w-full md:w-1/2 px-4 mb-4  md:mb-0">
               <img
                 className="md:w-3/4 mx-auto h-fit border-style:double border-4 border-green-500"
                 src="/V.png"
@@ -28,7 +44,7 @@ const AboutPage = ({ user, setUser }) => {
             </div>
             <div className="w-full md:w-1/2 px-4">
               <div className="md:max-w-xl text-center md:text-left">
-                <h2 className="mb-4 text-4xl md:text-5xl leading-tight font-bold tracking-tighter">
+                <h2 className="md:mb-4 text-4xl md:text-5xl leading-tight font-bold tracking-tighter">
                   Véronique Cadet
                 </h2>
                 <p className="mb-6 text-lg md:text-xl text-coolGray-500">
@@ -96,7 +112,7 @@ const AboutPage = ({ user, setUser }) => {
       </section>
 
       <section
-        className="relative py-24 md:py-40 bg-white"
+        className="relative py-10 md:py-20 bg-white"
         style={{
           background_image: "url('flex-ui-assets/elements/pattern-white.svg')",
           background_position: "center;",
@@ -104,7 +120,7 @@ const AboutPage = ({ user, setUser }) => {
       >
         <div className="relative z-10 container px-4 mx-auto">
           <div className="flex flex-wrap items-center -mx-4">
-            <div className="w-full md:w-1/2 px-4 mb-16 md:mb-0">
+            <div className="w-full md:w-1/2 px-4 mb-4  md:mb-0">
               <img
                 className="md:w-3/4 mx-auto border-style:double border-4 border-green-500"
                 src="/R.jpg"
@@ -114,7 +130,7 @@ const AboutPage = ({ user, setUser }) => {
             </div>
             <div className="w-full md:w-1/2 px-4">
               <div className="md:max-w-xl text-center md:text-left">
-                <h2 className="mb-4 text-4xl md:text-5xl leading-tight font-bold tracking-tighter">
+                <h2 className="md:mb-4 text-4xl md:text-5xl leading-tight font-bold tracking-tighter">
                   Rochelle Katzman
                 </h2>
                 <p className="mb-6 text-lg md:text-xl text-coolGray-500">
@@ -182,7 +198,7 @@ const AboutPage = ({ user, setUser }) => {
       </section>
 
       <section
-        className="relative py-24 md:py-40 bg-white "
+        className="relative py-10 md:py-20 bg-white "
         style={{
           background_image: "url('flex-ui-assets/elements/pattern-white.svg')",
           background_position: "center;",
@@ -190,7 +206,7 @@ const AboutPage = ({ user, setUser }) => {
       >
         <div className="relative z-10 container px-4 mx-auto ">
           <div className="flex flex-wrap items-center -mx-4 ">
-            <div className="w-full md:w-1/2  px-4 mb-16 md:mb-0 ">
+            <div className="w-full md:w-1/2  px-4 mb-4  md:mb-0 ">
               <img
                 className="md:w-3/4  mx-auto border-style:double border-4 border-green-500"
                 src="/H.jpg"
@@ -200,7 +216,7 @@ const AboutPage = ({ user, setUser }) => {
             </div>
             <div className="w-full md:w-1/2 px-4">
               <div className="md:max-w-xl text-center md:text-left">
-                <h2 className="mb-4 text-4xl md:text-5xl leading-tight font-bold tracking-tighter">
+                <h2 className="md:mb-4 text-4xl md:text-5xl leading-tight font-bold tracking-tighter">
                   Hassan Razak
                 </h2>
                 <p className="mb-6 text-lg md:text-xl text-coolGray-500">
